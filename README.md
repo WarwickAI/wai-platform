@@ -1,19 +1,10 @@
-## Minimal [(Free version)](https://minimal-kit-react.vercel.app/)
+## [warwick.ai](https://www.warwick.ai/)
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-> Free React Admin Dashboard made with Material-UI components and React.
+> An events management system for Warwick AI, for managing users groups for talks, projects and courses. 
 
 ![preview](public/static/preview.png)
-
-| [Minimal Free](https://minimal-kit-react.vercel.app/) | [Minimal](https://material-ui.com/store/items/minimal-dashboard/) |
-| ----------------------------------------------------- | :---------------------------------------------------------------- |
-| **7** Demo pages                                      | **40** demo pages                                                 |
-| -                                                     | ✓ Multi-language                                                  |
-| -                                                     | ✓ Dark/Light Mode 🌓                                              |
-| -                                                     | ✓ [More components](https://minimals.cc/components)               |
-| -                                                     | ✓ TypeScript version                                              |
-| -                                                     | ✓ Design files (Figma & Sketch)                                   |
 
 ## Page demo
 
@@ -35,6 +26,10 @@
 
 Distributed under the MIT License. See [LICENSE](https://github.com/minimal-ui-kit/minimal.free/blob/main/LICENSE.md) for more information.
 
+## Based on 
+
+[Minimal Free](https://minimal-kit-react.vercel.app/) 
+
 ## Contact us
 
-Email Us: support@minimals.cc
+Email Us: hello@warwick.ai
