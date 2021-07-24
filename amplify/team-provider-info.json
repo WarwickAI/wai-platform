@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-waiplatform-dev-222739-authRole",
+            "UnauthRoleArn": "arn:aws:iam::818830417445:role/amplify-waiplatform-dev-222739-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::818830417445:role/amplify-waiplatform-dev-222739-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-waiplatform-dev-222739-deployment",
+            "UnauthRoleName": "amplify-waiplatform-dev-222739-unauthRole",
+            "StackName": "amplify-waiplatform-dev-222739",
+            "StackId": "arn:aws:cloudformation:eu-west-2:818830417445:stack/amplify-waiplatform-dev-222739/fad55710-ecc5-11eb-9308-0af3994a2dba",
+            "AmplifyAppId": "dtq3eg2x08klj"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "dtq3eg2x08klj",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}

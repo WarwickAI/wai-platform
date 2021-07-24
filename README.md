@@ -1,8 +1,6 @@
-## Minimal [(Free version)](https://minimal-kit-react.vercel.app/)
+## [warwick.ai platform](https://www.warwick.ai)
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
-
-> Free React Admin Dashboard made with Material-UI components and React.
+>  
 
 ![preview](public/static/preview.png)
 
@@ -37,4 +35,4 @@ Distributed under the MIT License. See [LICENSE](https://github.com/minimal-ui-k
 
 ## Contact us
 
-Email Us: support@minimals.cc
+Email Us: hello@warwick.ai
