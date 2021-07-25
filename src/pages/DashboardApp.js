@@ -22,10 +22,15 @@ import UserGroup from '../components/UserGroup';
 
 export default function DashboardApp() {
   return (
-    <Page title="Dashboard | Minimal-UI">
+    <Page title="WAI Groups">
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
-          <Typography variant="h4">Hi, Welcome back</Typography>
+          <Typography variant="h4">
+            Hi, Welcome back to the WAI Platform!{' '}
+            <span role="img" aria-label="emoji">
+              🌠
+            </span>
+          </Typography>
         </Box>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={6}>

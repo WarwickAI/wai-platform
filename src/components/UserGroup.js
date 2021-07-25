@@ -7,6 +7,7 @@ import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
 import { Icon } from '@iconify/react';
 import androidFilled from '@iconify/icons-ant-design/android-filled';
 import { Card } from '@material-ui/core';
+import UserTable from './UserTable';
 
 const HeadingStyle = styled(Typography)(({ theme }) => ({
   fontSize: theme.typography.pxToRem(15),
@@ -34,7 +35,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   width: theme.spacing(8),
   height: theme.spacing(8),
   justifyContent: 'center',
-  marginBottom: theme.spacing(3),
+  marginBottom: theme.spacing(2),
   color: theme.palette.primary.dark,
   backgroundImage: `linear-gradient(135deg, ${alpha(theme.palette.info.dark, 0)} 0%, ${alpha(
     theme.palette.info.dark,
@@ -45,11 +46,20 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 export default function UserGroup() {
   return (
     <RootStyle>
-      <Accordion>
+      <Accordion
+        // Removes the grey border on the top edge of the panel
+        sx={{
+          '&:before': {
+            display: 'none'
+          }
+        }}
+      >
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
           <HeaderStyle>
             <IconWrapperStyle>
-              <Icon icon={androidFilled} width={24} height={24} />
+              <span role="img" aria-label="emoji">
+                💫
+              </span>
             </IconWrapperStyle>
             <Typography variant="h3">Project Carbon</Typography>
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
@@ -64,7 +74,13 @@ export default function UserGroup() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion
+        sx={{
+          '&:before': {
+            display: 'none'
+          }
+        }}
+      >
         <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
           <HeaderStyle>
             <HeadingStyle>Notifications</HeadingStyle>
@@ -77,14 +93,20 @@ export default function UserGroup() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion
+        sx={{
+          '&:before': {
+            display: 'none'
+          }
+        }}
+      >
         <AccordionSummary aria-controls="panel3a-content" id="panel3a-header">
           <HeaderStyle>
             <HeadingStyle>Members</HeadingStyle>
           </HeaderStyle>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>Here are all of the members that have signed up to this group.</Typography>
+          <UserTable />
         </AccordionDetails>
       </Accordion>
     </RootStyle>
