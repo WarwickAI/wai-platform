@@ -16,6 +16,7 @@ import {
   AppCurrentSubject,
   AppConversionRates
 } from '../components/_dashboard/app';
+import UserGroup from '../components/UserGroup';
 
 // ----------------------------------------------------------------------
 
@@ -27,17 +28,17 @@ export default function DashboardApp() {
           <Typography variant="h4">Hi, Welcome back</Typography>
         </Box>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3}>
-            <AppWeeklySales />
+          <Grid item xs={12} sm={12} md={6}>
+            <UserGroup />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <AppNewUsers />
+          <Grid item xs={12} sm={12} md={6}>
+            <UserGroup />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <AppItemOrders />
+          <Grid item xs={12} sm={12} md={6}>
+            <UserGroup />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <AppBugReports />
+          <Grid item xs={12} sm={12} md={6}>
+            <UserGroup />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>
