@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
@@ -9,17 +8,16 @@ import { Icon } from '@iconify/react';
 import androidFilled from '@iconify/icons-ant-design/android-filled';
 import { Card } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%'
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular
-  }
+const HeadingStyle = styled(Typography)(({ theme }) => ({
+  fontSize: theme.typography.pxToRem(15),
+  fontWeight: theme.typography.fontWeightRegular
 }));
 
-const RootStyle = styled(Card)(({ theme }) => ({
+const RootStyle = styled('div')(({ theme }) => ({
+  width: '100%'
+}));
+
+const HeaderStyle = styled(Card)(({ theme }) => ({
   width: '100%',
   boxShadow: 'none',
   textAlign: 'center',
@@ -45,13 +43,11 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 }));
 
 export default function UserGroup() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <RootStyle>
       <Accordion>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
-          <RootStyle>
+          <HeaderStyle>
             <IconWrapperStyle>
               <Icon icon={androidFilled} width={24} height={24} />
             </IconWrapperStyle>
@@ -59,7 +55,7 @@ export default function UserGroup() {
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
               4 Members
             </Typography>
-          </RootStyle>
+          </HeaderStyle>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -70,9 +66,9 @@ export default function UserGroup() {
       </Accordion>
       <Accordion>
         <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
-          <RootStyle>
-            <Typography className={classes.heading}>Notifications</Typography>
-          </RootStyle>
+          <HeaderStyle>
+            <HeadingStyle>Notifications</HeadingStyle>
+          </HeaderStyle>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -83,14 +79,14 @@ export default function UserGroup() {
       </Accordion>
       <Accordion>
         <AccordionSummary aria-controls="panel3a-content" id="panel3a-header">
-          <RootStyle>
-            <Typography className={classes.heading}>Members</Typography>
-          </RootStyle>
+          <HeaderStyle>
+            <HeadingStyle>Members</HeadingStyle>
+          </HeaderStyle>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>Here are all of the members that have signed up to this group.</Typography>
         </AccordionDetails>
       </Accordion>
-    </div>
+    </RootStyle>
   );
 }
