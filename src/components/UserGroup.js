@@ -20,11 +20,11 @@ const RootStyle = styled('div')(({ theme }) => ({
 
 const HeaderStyle = styled(Card)(({ theme }) => ({
   width: '100%',
-  boxShadow: 'none',
+  boxShadow: theme.customShadows.z12,
   textAlign: 'center',
   padding: theme.spacing(2, 0),
   color: theme.palette.primary.darker,
-  backgroundColor: theme.palette.info.lighter
+  backgroundColor: theme.palette.grey[100]
 }));
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
@@ -36,8 +36,8 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   height: theme.spacing(8),
   justifyContent: 'center',
   marginBottom: theme.spacing(2),
-  color: theme.palette.primary.dark,
-  backgroundImage: `linear-gradient(135deg, ${alpha(theme.palette.info.dark, 0)} 0%, ${alpha(
+  color: theme.palette.grey[50],
+  backgroundImage: `linear-gradient(135deg, ${alpha(theme.palette.grey[50], 0)} 0%, ${alpha(
     theme.palette.info.dark,
     0.24
   )} 100%)`

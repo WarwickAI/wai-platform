@@ -9,7 +9,7 @@ import { fShortenNumber } from '../../../utils/formatNumber';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Card)(({ theme }) => ({
-  boxShadow: 'none',
+  boxShadow: theme.customShadows.z12,
   textAlign: 'center',
   padding: theme.spacing(5, 0),
   color: theme.palette.primary.darker,
