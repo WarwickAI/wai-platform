@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
 import { Icon } from '@iconify/react';
 import androidFilled from '@iconify/icons-ant-design/android-filled';
-import { Card } from '@material-ui/core';
+import { Card, Button } from '@material-ui/core';
 import UserTable from './UserTable';
 
 const HeadingStyle = styled(Typography)(({ theme }) => ({
@@ -67,6 +67,7 @@ export default function UserGroup() {
             </Typography>
           </HeaderStyle>
         </AccordionSummary>
+
         <AccordionDetails>
           <Typography>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
@@ -74,6 +75,7 @@ export default function UserGroup() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+
       <Accordion
         sx={{
           '&:before': {
@@ -86,6 +88,7 @@ export default function UserGroup() {
             <HeadingStyle>Notifications</HeadingStyle>
           </HeaderStyle>
         </AccordionSummary>
+
         <AccordionDetails>
           <Typography>
             Here you can see all of the notifications that have been set up for this group. To add a
@@ -93,6 +96,7 @@ export default function UserGroup() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+
       <Accordion
         sx={{
           '&:before': {
@@ -105,6 +109,7 @@ export default function UserGroup() {
             <HeadingStyle>Members</HeadingStyle>
           </HeaderStyle>
         </AccordionSummary>
+
         <AccordionDetails>
           <UserTable />
         </AccordionDetails>
