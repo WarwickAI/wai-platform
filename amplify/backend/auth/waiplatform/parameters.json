@@ -1,0 +1,6 @@
+{
+  "authSelections": "userPoolOnly",
+  "resourceName": "waiplatform",
+  "serviceType": "imported",
+  "region": "eu-west-2"
+}

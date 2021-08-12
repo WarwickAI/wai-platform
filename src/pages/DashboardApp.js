@@ -1,5 +1,6 @@
+import { Auth } from 'aws-amplify';
 // react
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // material
 import { Box, Grid, Container, Typography, Button } from '@material-ui/core';
 // components
@@ -22,6 +23,15 @@ import UserGroup from '../components/UserGroup';
 
 export default function DashboardApp() {
   const [groups, setGroups] = useState([]);
+
+  const fetchUserData = async () => {
+    const userData = await Auth.currentUserInfo();
+    console.log(userData);
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
 
   return (
     <Page title="WAI Groups">
