@@ -18,10 +18,10 @@ import {
   AppConversionRates
 } from '../components/_dashboard/app';
 import UserGroup from '../components/UserGroup';
-
+import withAuthentication from '../components/authentication/ProtectedRoute';
 // ----------------------------------------------------------------------
 
-export default function DashboardApp() {
+function DashboardApp() {
   const [groups, setGroups] = useState([]);
 
   const fetchUserData = async () => {
@@ -101,3 +101,5 @@ export default function DashboardApp() {
     </Page>
   );
 }
+
+export default withAuthentication(DashboardApp);

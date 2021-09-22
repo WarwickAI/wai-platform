@@ -49,7 +49,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 export default function Login() {
   const authenticate = async () => {
-    await Auth.federatedSignIn({ provider: 'warwick.ac.uk' });
+    const result = await Auth.federatedSignIn({ provider: 'warwick.ac.uk' });
   };
 
   return (
