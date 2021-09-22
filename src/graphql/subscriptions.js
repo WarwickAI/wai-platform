@@ -46,3 +46,54 @@ export const onDeleteGroup = /* GraphQL */ `
     }
   }
 `;
+export const onCreateProject = /* GraphQL */ `
+  subscription OnCreateProject {
+    onCreateProject {
+      id
+      shortName
+      title
+      description
+      createdAt
+      cover
+      joinLink
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateProject = /* GraphQL */ `
+  subscription OnUpdateProject {
+    onUpdateProject {
+      id
+      shortName
+      title
+      description
+      createdAt
+      cover
+      joinLink
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteProject = /* GraphQL */ `
+  subscription OnDeleteProject {
+    onDeleteProject {
+      id
+      shortName
+      title
+      description
+      createdAt
+      cover
+      joinLink
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;

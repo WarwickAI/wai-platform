@@ -1,6 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import plusFill from '@iconify/icons-eva/plus-fill';
 import { Link as RouterLink } from 'react-router-dom';
+import { API, Auth } from 'aws-amplify';
 // material
 import { Grid, Button, Container, Stack, Typography } from '@material-ui/core';
 // components
@@ -12,6 +14,7 @@ import {
 } from '../components/_dashboard/projects';
 //
 import PROJECTS from '../_mocks_/blog';
+import { listProjects } from '../graphql/queries';
 
 // ----------------------------------------------------------------------
 
@@ -24,6 +27,33 @@ const SORT_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  async function fetchProjects() {
+    let loadedProjects;
+    try {
+      const user = await Auth.currentAuthenticatedUser();
+      await API.graphql({
+        query: listProjects,
+        variables: {
+          limit: 100
+        },
+        authMode: 'AMAZON_COGNITO_USER_POOLS'
+      }).then((result) => {
+        loadedProjects = result.data.eventsByUser.items;
+        setProjects(loadedProjects);
+        setIsLoading(false);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
   return (
     <Page title="Projects">
       <Container>

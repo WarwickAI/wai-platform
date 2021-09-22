@@ -25,6 +25,9 @@ export default function DashboardApp() {
   const [groups, setGroups] = useState([]);
 
   const fetchUserData = async () => {
+    const user = Auth.currentAuthenticatedUser();
+    console.log('Username:');
+    console.log(user.username);
     const userData = await Auth.currentUserInfo();
     console.log(userData);
   };

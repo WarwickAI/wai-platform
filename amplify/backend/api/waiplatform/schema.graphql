@@ -10,4 +10,14 @@ type Group @model @auth(rules: [{allow: public}]) {
   description: String
   name: String!
 }
+
+type Project @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  shortName: String
+  title: String
+  description: String
+  createdAt: AWSDate
+  cover: AWSURL
+  joinLink: AWSURL
+}
  
