@@ -16,3 +16,15 @@ export declare class Group {
   constructor(init: ModelInit<Group>);
   static copyOf(source: Group, mutator: (draft: MutableModel<Group>) => MutableModel<Group> | void): Group;
 }
+
+export declare class Project {
+  readonly id: string;
+  readonly shortName?: string;
+  readonly title?: string;
+  readonly description?: string;
+  readonly createdAt?: string;
+  readonly cover?: string;
+  readonly joinLink?: string;
+  constructor(init: ModelInit<Project>);
+  static copyOf(source: Project, mutator: (draft: MutableModel<Project>) => MutableModel<Project> | void): Project;
+}

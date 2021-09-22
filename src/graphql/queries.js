@@ -68,3 +68,76 @@ export const syncGroups = /* GraphQL */ `
     }
   }
 `;
+export const getProject = /* GraphQL */ `
+  query GetProject($id: ID!) {
+    getProject(id: $id) {
+      id
+      shortName
+      title
+      description
+      createdAt
+      cover
+      joinLink
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
+export const listProjects = /* GraphQL */ `
+  query ListProjects(
+    $filter: ModelProjectFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        shortName
+        title
+        description
+        createdAt
+        cover
+        joinLink
+        _version
+        _deleted
+        _lastChangedAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncProjects = /* GraphQL */ `
+  query SyncProjects(
+    $filter: ModelProjectFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncProjects(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        shortName
+        title
+        description
+        createdAt
+        cover
+        joinLink
+        _version
+        _deleted
+        _lastChangedAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
