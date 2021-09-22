@@ -19,7 +19,7 @@ const RootStyle = styled(Page)(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function Page404() {
+export default function Landing() {
   return (
     <RootStyle title="Come back later!">
       <Container>
@@ -32,7 +32,7 @@ export default function Page404() {
             </motion.div>
             <Typography sx={{ color: 'text.secondary' }}>
               I'm sorry we couldn't give you all of your wishes and desires, but we promise we're
-              working hard to get up and running as soon as possible.
+              working very hard to get up and running as soon as possible.
             </Typography>
             <Typography sx={{ color: 'text.secondary' }}>
               In the mean time, if you want to get involved, come and have a chat on Discord. We
