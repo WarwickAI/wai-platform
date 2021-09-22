@@ -11,6 +11,8 @@ import Blog from './pages/Blog';
 import Landing from './pages/Landing';
 import User from './pages/User';
 import NotFound from './pages/Page404';
+import Projects from './pages/Projects';
+import Project from './pages/Project';
 
 // ----------------------------------------------------------------------
 
@@ -24,7 +26,9 @@ export default function Router() {
         { path: 'app', element: <DashboardApp /> },
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
-        { path: 'blog', element: <Blog /> }
+        { path: 'blog', element: <Blog /> },
+        { path: 'projects/:id', element: <Project /> },
+        { path: 'projects', element: <Projects /> }
       ]
     },
     {
