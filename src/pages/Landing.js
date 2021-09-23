@@ -6,6 +6,8 @@ import { Box, Button, Typography, Container } from '@material-ui/core';
 // components
 import { MotionContainer, varBounceIn } from '../components/animate';
 import Page from '../components/Page';
+// particles
+import ParticleBackground from '../utils/particles/particleBackground';
 
 // ----------------------------------------------------------------------
 
@@ -13,8 +15,8 @@ const RootStyle = styled(Page)(({ theme }) => ({
   display: 'flex',
   minHeight: '100%',
   alignItems: 'center',
-  paddingTop: theme.spacing(15),
-  paddingBottom: theme.spacing(10)
+  paddingTop: theme.spacing(0),
+  paddingBottom: theme.spacing(40)
 }));
 
 // ----------------------------------------------------------------------
@@ -25,6 +27,13 @@ export default function Landing() {
       <Container>
         <MotionContainer initial="initial" open>
           <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
+            <motion.div variants={varBounceIn}>
+              <Box
+                component="img"
+                src="/static/illustrations/illustration_404.svg"
+                sx={{ height: 260, mx: 'auto', my: { xs: 5, sm: 3 } }}
+              />
+            </motion.div>
             <motion.div variants={varBounceIn}>
               <Typography variant="h3" paragraph>
                 Sorry, warwick.ai under maintaince right now!
@@ -48,16 +57,10 @@ export default function Landing() {
             >
               Join the Discord
             </Button>
-            <motion.div variants={varBounceIn}>
-              <Box
-                component="img"
-                src="/static/illustrations/illustration_404.svg"
-                sx={{ height: 260, mx: 'auto', my: { xs: 5, sm: 10 } }}
-              />
-            </motion.div>
           </Box>
         </MotionContainer>
       </Container>
+      <ParticleBackground />
     </RootStyle>
   );
 }
