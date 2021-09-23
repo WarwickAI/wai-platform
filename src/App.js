@@ -6,10 +6,10 @@ import ThemeConfig from './theme';
 // components
 import ScrollToTop from './components/ScrollToTop';
 
-import awsconfig from './aws-exports';
+import appSettings from './appSettings';
 // ----------------------------------------------------------------------
 
-Amplify.configure(awsconfig);
+Amplify.configure(appSettings);
 
 export default function App() {
   return (
