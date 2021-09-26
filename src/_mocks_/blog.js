@@ -44,7 +44,7 @@ const posts = [
   },
   {
     id: 'gpt3detector',
-    cover: mockImgCover(1),
+    cover: mockImgCover(2),
     title: POST_TITLES[1],
     createdAt: faker.date.past(),
     view: faker.datatype.number(),
@@ -58,7 +58,7 @@ const posts = [
   },
   {
     id: 'creativity',
-    cover: mockImgCover(1),
+    cover: mockImgCover(3),
     title: POST_TITLES[2],
     createdAt: faker.date.past(),
     view: faker.datatype.number(),
@@ -72,7 +72,7 @@ const posts = [
   },
   {
     id: 'gpt3essays',
-    cover: mockImgCover(1),
+    cover: mockImgCover(4),
     title: POST_TITLES[3],
     createdAt: faker.date.past(),
     view: faker.datatype.number(),
@@ -86,7 +86,7 @@ const posts = [
   },
   {
     id: 'receiptanalysis',
-    cover: mockImgCover(1),
+    cover: mockImgCover(5),
     title: POST_TITLES[4],
     createdAt: faker.date.past(),
     view: faker.datatype.number(),
