@@ -50,12 +50,13 @@ export const onCreateProject = /* GraphQL */ `
   subscription OnCreateProject {
     onCreateProject {
       id
-      shortName
       title
-      description
-      createdAt
+      logo
       cover
+      createdAt
+      description
       joinLink
+      shortName
       _version
       _deleted
       _lastChangedAt
@@ -67,12 +68,13 @@ export const onUpdateProject = /* GraphQL */ `
   subscription OnUpdateProject {
     onUpdateProject {
       id
-      shortName
       title
-      description
-      createdAt
+      logo
       cover
+      createdAt
+      description
       joinLink
+      shortName
       _version
       _deleted
       _lastChangedAt
@@ -84,12 +86,13 @@ export const onDeleteProject = /* GraphQL */ `
   subscription OnDeleteProject {
     onDeleteProject {
       id
-      shortName
       title
-      description
-      createdAt
+      logo
       cover
+      createdAt
+      description
       joinLink
+      shortName
       _version
       _deleted
       _lastChangedAt

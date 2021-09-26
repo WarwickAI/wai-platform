@@ -53,23 +53,25 @@ const CoverImgStyle = styled('img')({
   position: 'absolute'
 });
 
+const AVATAR_URL = '/static/logo2.png';
+
 // ----------------------------------------------------------------------
 
 ProjectPostCard.propTypes = {
-  post: PropTypes.object.isRequired,
+  project: PropTypes.object.isRequired,
   index: PropTypes.number
 };
 
-export default function ProjectPostCard({ post, index }) {
-  const { id, cover, title, view, comment, share, author, createdAt } = post;
+export default function ProjectPostCard({ project, index }) {
+  const { id, shortName, title, description, createdAt, cover, joinLink } = project;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
 
-  const POST_INFO = [
-    { number: comment, icon: messageCircleFill },
-    { number: view, icon: eyeFill },
-    { number: share, icon: shareFill }
-  ];
+  // const POST_INFO = [
+  //   { number: comment, icon: messageCircleFill },
+  //   { number: view, icon: eyeFill },
+  //   { number: share, icon: shareFill }
+  // ];
 
   return (
     <Grid item xs={12} sm={latestPostLarge ? 12 : 6} md={latestPostLarge ? 6 : 3}>
@@ -108,8 +110,8 @@ export default function ProjectPostCard({ post, index }) {
             }}
           />
           <AvatarStyle
-            alt={author.name}
-            src={author.avatarUrl}
+            alt="WarwickAI"
+            src={AVATAR_URL}
             sx={{
               ...((latestPostLarge || latestPost) && {
                 zIndex: 9,
@@ -143,7 +145,7 @@ export default function ProjectPostCard({ post, index }) {
           </Typography>
 
           <TitleStyle
-            to={id}
+            to={shortName}
             color="inherit"
             variant="subtitle2"
             underline="hover"
@@ -158,7 +160,7 @@ export default function ProjectPostCard({ post, index }) {
             {title}
           </TitleStyle>
 
-          <InfoStyle>
+          {/* <InfoStyle>
             {POST_INFO.map((info, index) => (
               <Box
                 key={index}
@@ -175,7 +177,7 @@ export default function ProjectPostCard({ post, index }) {
                 <Typography variant="caption">{fShortenNumber(info.number)}</Typography>
               </Box>
             ))}
-          </InfoStyle>
+          </InfoStyle> */}
         </CardContent>
       </Card>
     </Grid>

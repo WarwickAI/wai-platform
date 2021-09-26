@@ -69,13 +69,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "shortName": {
-                    "name": "shortName",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "title": {
                     "name": "title",
                     "isArray": false,
@@ -83,17 +76,10 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "description": {
-                    "name": "description",
+                "logo": {
+                    "name": "logo",
                     "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDate",
+                    "type": "AWSURL",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -104,11 +90,32 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "description": {
+                    "name": "description",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "joinLink": {
                     "name": "joinLink",
                     "isArray": false,
                     "type": "AWSURL",
                     "isRequired": false,
+                    "attributes": []
+                },
+                "shortName": {
+                    "name": "shortName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
                     "attributes": []
                 }
             },
@@ -120,6 +127,16 @@ export const schema = {
                     "properties": {}
                 },
                 {
+                    "type": "key",
+                    "properties": {
+                        "name": "projectsByShortName",
+                        "fields": [
+                            "shortName"
+                        ],
+                        "queryField": "projectsByShortName"
+                    }
+                },
+                {
                     "type": "auth",
                     "properties": {
                         "rules": [
@@ -129,6 +146,12 @@ export const schema = {
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             }
@@ -149,5 +172,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "8eb6f85e284bed653c95ed66759bfdd3"
+    "version": "60a1a14c9c55ba81eb54ee9b2eb7469f"
 };

@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 // material
 import { experimentalStyled as styled } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import { Icon } from '@iconify/react';
+import peopleFill from '@iconify/icons-eva/people-fill';
+import arrowForwardFill from '@iconify/icons-eva/arrow-forward-fill';
 import { Box, Button, Typography, Container } from '@material-ui/core';
 // components
 import { MotionContainer, varBounceIn } from '../components/animate';
@@ -23,40 +30,55 @@ const RootStyle = styled(Page)(({ theme }) => ({
 
 export default function Landing() {
   return (
-    <RootStyle title="Come back later!">
+    <RootStyle title="WarwickAI">
       <Container>
         <MotionContainer initial="initial" open>
-          <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
-            <motion.div variants={varBounceIn}>
-              <Box
-                component="img"
-                src="/static/illustrations/illustration_404.svg"
-                sx={{ height: 260, mx: 'auto', my: { xs: 5, sm: 3 } }}
-              />
-            </motion.div>
+          <Box sx={{ maxWidth: 1000, margin: 'auto', textAlign: 'center', paddingTop: 20 }}>
             <motion.div variants={varBounceIn}>
               <Typography variant="h3" paragraph>
-                Sorry, warwick.ai under maintaince right now!
+                Welcome to WarwickAI
               </Typography>
             </motion.div>
-            <Typography sx={{ color: 'text.secondary' }}>
-              I'm sorry we couldn't give you all of your wishes and desires, but we promise we're
-              working very very hard to get up and running as soon as possible.
-            </Typography>
-            <Typography sx={{ color: 'text.secondary' }}>
-              In the mean time, if you want to get involved, come and have a chat on Discord. We
-              welcome people from all skill levels and all walks of life. If you want to talk about
-              AI, we want to talk to you.
-            </Typography>
-            <Button
-              target="_blank"
-              sx={{ marginTop: '3em' }}
-              href="https://discord.gg/HYkExyWjh6"
-              size="large"
-              variant="contained"
+            <Grid
+              container
+              justifyContent="center"
+              spacing={8}
+              direction="row"
+              sx={{ paddingTop: 5 }}
             >
-              Join the Discord
-            </Button>
+              <Grid item>
+                <iframe
+                  title="discord"
+                  src="https://discord.com/widget?id=671438057408561182&theme=dark"
+                  width="350"
+                  height="500"
+                  allowtransparency="true"
+                  frameBorder="0"
+                  sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                />
+              </Grid>
+              <Grid item>
+                <Typography variant="h4">Projects</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Find more information here</Typography>
+                <Button sx={{ marginTop: '1em' }} href="/projects" size="large" variant="contained">
+                  <Icon icon={arrowForwardFill} width={22} height={22} />
+                </Button>
+
+                <Typography variant="h4" sx={{ paddingTop: 10 }}>
+                  Everything else
+                </Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Find more information here</Typography>
+                <Button
+                  target="_blank"
+                  sx={{ marginTop: '1em' }}
+                  href="https://linktr.ee/warwickai"
+                  size="large"
+                  variant="contained"
+                >
+                  <Icon icon={arrowForwardFill} width={22} height={22} />
+                </Button>
+              </Grid>
+            </Grid>
           </Box>
         </MotionContainer>
       </Container>

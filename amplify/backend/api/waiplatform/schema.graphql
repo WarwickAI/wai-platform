@@ -11,13 +11,17 @@ type Group @model @auth(rules: [{allow: public}]) {
   name: String!
 }
 
-type Project @model @auth(rules: [{allow: public}]) {
+type Project
+    @model
+    @auth(rules: [{allow: public}, {allow: private, operations: [read]}])
+    @key(name: "projectsByShortName", fields: ["shortName"], queryField: "projectsByShortName") {
   id: ID!
-  shortName: String
   title: String
-  description: String
-  createdAt: AWSDate
+  logo: AWSURL
   cover: AWSURL
+  createdAt: AWSDate
+  description: String
   joinLink: AWSURL
+  shortName: String!
 }
  

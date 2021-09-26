@@ -1,4 +1,5 @@
 import { Auth } from 'aws-amplify';
+import { useSelector } from 'react-redux';
 // react
 import { useEffect, useRef, useState } from 'react';
 // material
@@ -22,19 +23,9 @@ import withAuthentication from '../components/authentication/ProtectedRoute';
 // ----------------------------------------------------------------------
 
 function DashboardApp() {
-  const [groups, setGroups] = useState([]);
+  const userAttributes = useSelector((state) => state.auth);
 
-  const fetchUserData = async () => {
-    const user = Auth.currentAuthenticatedUser();
-    console.log('Username:');
-    console.log(user.username);
-    const userData = await Auth.currentUserInfo();
-    console.log(userData);
-  };
-
-  useEffect(() => {
-    fetchUserData();
-  }, []);
+  useEffect(() => console.log(userAttributes));
 
   return (
     <Page title="WAI Groups">
@@ -42,19 +33,20 @@ function DashboardApp() {
         <Grid container spacing={3}>
           <Grid item xs={6} sm={8} md={6} spacing={0} sx={{ pb: 5 }}>
             <Typography variant="h4">
-              Hi, Welcome back to the WAI Platform!{' '}
+              Welcome back to the WAI Platform!{' '}
               <span role="img" aria-label="emoji">
                 🌠
               </span>
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={4} md={6} sx={{ pb: 5 }}>
+          {/* <Grid item xs={12} sm={4} md={6} sx={{ pb: 5 }}>
             <Box>
               <CreateGroupButton groups={groups} setGroups={setGroups} />
             </Box>
-          </Grid>
+          </Grid> */}
         </Grid>
-        <Grid container spacing={3}>
+        <Typography>This page is under construction.</Typography>
+        {/* <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={6}>
             <UserGroup />
           </Grid>
@@ -67,42 +59,10 @@ function DashboardApp() {
           <Grid item xs={12} sm={12} md={6}>
             <UserGroup />
           </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppWebsiteVisits />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentVisits />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppConversionRates />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentSubject />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppNewsUpdate />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppOrderTimeline />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppTrafficBySite />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppTasks />
-          </Grid>
-        </Grid>
+        </Grid> */}
       </Container>
     </Page>
   );
 }
 
-export default withAuthentication(DashboardApp);
+export default DashboardApp;

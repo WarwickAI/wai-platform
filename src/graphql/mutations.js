@@ -62,12 +62,13 @@ export const createProject = /* GraphQL */ `
   ) {
     createProject(input: $input, condition: $condition) {
       id
-      shortName
       title
-      description
-      createdAt
+      logo
       cover
+      createdAt
+      description
       joinLink
+      shortName
       _version
       _deleted
       _lastChangedAt
@@ -82,12 +83,13 @@ export const updateProject = /* GraphQL */ `
   ) {
     updateProject(input: $input, condition: $condition) {
       id
-      shortName
       title
-      description
-      createdAt
+      logo
       cover
+      createdAt
+      description
       joinLink
+      shortName
       _version
       _deleted
       _lastChangedAt
@@ -102,12 +104,13 @@ export const deleteProject = /* GraphQL */ `
   ) {
     deleteProject(input: $input, condition: $condition) {
       id
-      shortName
       title
-      description
-      createdAt
+      logo
       cover
+      createdAt
+      description
       joinLink
+      shortName
       _version
       _deleted
       _lastChangedAt

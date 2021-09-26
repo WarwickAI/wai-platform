@@ -52,7 +52,7 @@ export default function ProjectPostsSearch({ posts }) {
         renderInput={(params) => (
           <TextField
             {...params}
-            placeholder="Search post..."
+            placeholder="Search project..."
             InputProps={{
               ...params.InputProps,
               startAdornment: (

@@ -72,12 +72,13 @@ export const getProject = /* GraphQL */ `
   query GetProject($id: ID!) {
     getProject(id: $id) {
       id
-      shortName
       title
-      description
-      createdAt
+      logo
       cover
+      createdAt
+      description
       joinLink
+      shortName
       _version
       _deleted
       _lastChangedAt
@@ -94,12 +95,47 @@ export const listProjects = /* GraphQL */ `
     listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        shortName
         title
-        description
-        createdAt
+        logo
         cover
+        createdAt
+        description
         joinLink
+        shortName
+        _version
+        _deleted
+        _lastChangedAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const projectsByShortName = /* GraphQL */ `
+  query ProjectsByShortName(
+    $shortName: String
+    $sortDirection: ModelSortDirection
+    $filter: ModelProjectFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    projectsByShortName(
+      shortName: $shortName
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        logo
+        cover
+        createdAt
+        description
+        joinLink
+        shortName
         _version
         _deleted
         _lastChangedAt
@@ -125,12 +161,13 @@ export const syncProjects = /* GraphQL */ `
     ) {
       items {
         id
-        shortName
         title
-        description
-        createdAt
+        logo
         cover
+        createdAt
+        description
         joinLink
+        shortName
         _version
         _deleted
         _lastChangedAt

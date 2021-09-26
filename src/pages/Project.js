@@ -1,33 +1,24 @@
+import { useEffect, useState } from 'react';
+import { API } from 'aws-amplify';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
-import { Link as RouterLink, useParams } from 'react-router-dom';
+import { Link as RouterLink, useParams, Navigate } from 'react-router-dom';
 // material
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Box, Button, Typography, Container } from '@material-ui/core';
+import ReactMarkdown from 'react-markdown';
 // components
 import plusFill from '@iconify/icons-eva/plus-fill';
 import faker from 'faker';
+import { projectsByShortName } from '../graphql/queries';
 import { MotionContainer, varBounceIn } from '../components/animate';
 import Page from '../components/Page';
-
 // ----------------------------------------------------------------------
-
-const post = {
-  id: 'publicsafety',
-  cover: 'https://source.unsplash.com/random',
-  shortName: 'shortname',
-  title: 'A long format name for the project',
-  createdAt: faker.date.past(),
-  description: faker.datatype.string(300),
-  joinLink: 'https://forms.gle/MTJmLfakcbxNQEiP8'
-};
 
 const RootStyle = styled(Page)(({ theme }) => ({
   display: 'flex',
   minHeight: '100%',
-  alignItems: 'center',
-  paddingTop: theme.spacing(15),
-  paddingBottom: theme.spacing(10)
+  alignItems: 'center'
 }));
 
 // ----------------------------------------------------------------------
@@ -35,27 +26,62 @@ const RootStyle = styled(Page)(({ theme }) => ({
 export default function Project() {
   const { id } = useParams();
 
-  return (
+  const [project, setProject] = useState({
+    title: '',
+    logo: '/static/logo2.png',
+    joinLink: ''
+  });
+
+  const [projectFound, setProjectFound] = useState(true);
+
+  const getProjectFromShortName = () =>
+    API.graphql({
+      query: projectsByShortName,
+      variables: {
+        shortName: id,
+        limit: 1
+      }
+    }).then((result) => {
+      const projects = result.data.projectsByShortName.items;
+
+      if (projects.length === 0) {
+        setProjectFound(false);
+        return;
+      }
+
+      setProject(projects[0]);
+    });
+
+  useEffect(() => getProjectFromShortName(), []);
+
+  return !projectFound ? (
+    <Navigate to="/404" replace />
+  ) : (
     <RootStyle title="WAI Project">
       <Container>
         <MotionContainer initial="initial" open>
-          <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
+          <Box sx={{ maxWidth: 800, margin: 'auto' }}>
             <motion.div variants={varBounceIn}>
-              <Box component="img" src={post.cover} sx={{ mx: 'auto', my: { xs: 5, sm: 10 } }} />
+              <Box
+                component="img"
+                src={project.logo}
+                sx={{ mx: 'auto', my: { xs: 5, sm: 0 }, height: 400, width: 400 }}
+              />
             </motion.div>
 
             <motion.div variants={varBounceIn}>
               <Typography variant="h3" paragraph>
-                Project: {post.title}
+                {project.title}
               </Typography>
             </motion.div>
-            <Typography sx={{ color: 'text.secondary' }}>{post.description}</Typography>
+            {/* <Typography sx={{ color: 'text.secondary' }}>{project.description}</Typography> */}
+            <ReactMarkdown children={project.description} />
 
             <Button
               variant="contained"
-              href={post.joinLink}
+              href={project.joinLink}
               target="_blank"
-              sx={{ my: { xs: 5, sm: 10 } }}
+              sx={{ my: { xs: 5, sm: 5 } }}
               startIcon={<Icon icon={plusFill} />}
             >
               Join Project

@@ -19,12 +19,13 @@ export declare class Group {
 
 export declare class Project {
   readonly id: string;
-  readonly shortName?: string;
   readonly title?: string;
-  readonly description?: string;
-  readonly createdAt?: string;
+  readonly logo?: string;
   readonly cover?: string;
+  readonly createdAt?: string;
+  readonly description?: string;
   readonly joinLink?: string;
+  readonly shortName: string;
   constructor(init: ModelInit<Project>);
   static copyOf(source: Project, mutator: (draft: MutableModel<Project>) => MutableModel<Project> | void): Project;
 }
