@@ -64,7 +64,21 @@ export default function Landing() {
                   <Icon icon={arrowForwardFill} width={22} height={22} />
                 </Button>
 
-                <Typography variant="h4" sx={{ paddingTop: 10 }}>
+                <Typography variant="h4" sx={{ paddingTop: 8 }}>
+                  Join the society
+                </Typography>
+                <Typography sx={{ color: 'text.secondary' }}>Join us in the SU website</Typography>
+                <Button
+                  target="_blank"
+                  sx={{ marginTop: '1em' }}
+                  href="https://www.warwicksu.com/societies-sports/societies/57846/"
+                  size="large"
+                  variant="contained"
+                >
+                  <Icon icon={arrowForwardFill} width={22} height={22} />
+                </Button>
+
+                <Typography variant="h4" sx={{ paddingTop: 8 }}>
                   Everything else
                 </Typography>
                 <Typography sx={{ color: 'text.secondary' }}>Find more information here</Typography>
