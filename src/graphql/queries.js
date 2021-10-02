@@ -102,6 +102,7 @@ export const listProjects = /* GraphQL */ `
         description
         joinLink
         shortName
+        difficulty
         _version
         _deleted
         _lastChangedAt
