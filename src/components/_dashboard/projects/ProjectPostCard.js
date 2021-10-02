@@ -5,8 +5,10 @@ import { Link as RouterLink } from 'react-router-dom';
 import shareFill from '@iconify/icons-eva/share-fill';
 import messageCircleFill from '@iconify/icons-eva/message-circle-fill';
 // material
+import Tooltip from '@material-ui/core/Tooltip';
 import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
 import { Box, Link, Card, Grid, Avatar, Typography, CardContent } from '@material-ui/core';
+import ColoredChip from '../../ColoredChip';
 // utils
 import { fDate } from '../../../utils/formatTime';
 import { fShortenNumber } from '../../../utils/formatNumber';
@@ -62,8 +64,49 @@ ProjectPostCard.propTypes = {
   index: PropTypes.number
 };
 
+const DifficultyChip = ({ desc, title, color }) => (
+  <Tooltip title={desc} aria-label="add">
+    <ColoredChip size="small" label={title} customColor={color} />
+  </Tooltip>
+);
+
+const IntroductoryChip = () => (
+  <DifficultyChip
+    desc="Suitable for people who have little or no experience coding AI. The goal of these projects mainly educational, allowing beginners to learn to write their own AI code."
+    title="Introductory"
+    color="green"
+  />
+);
+const IntermediateChip = () => (
+  <DifficultyChip
+    desc="Suitable for members who already have some AI knowledge; for instance those that have completed some AI courses on the Internet or with the society, or worked on a Beginner Project before. These projects are more independent than Beginner Projects."
+    title="Intermediate"
+    color="orange"
+  />
+);
+const AdvancedChip = () => (
+  <DifficultyChip
+    desc="Suitable for more experienced students who have a good understanding of AI  and are proficient at coding. These aim to solve more complex problems, with potential market applications."
+    title="Advanced"
+    color="#eb4034"
+  />
+);
+
+const getChipFromDifficulty = (difficulty) => {
+  switch (difficulty) {
+    case 'INTRODUCTORY':
+      return <IntroductoryChip />;
+    case 'INTERMEDIATE':
+      return <IntermediateChip />;
+    case 'ADVANCED':
+      return <AdvancedChip />;
+    default:
+      return <IntroductoryChip />;
+  }
+};
+
 export default function ProjectPostCard({ project, index }) {
-  const { id, shortName, title, description, createdAt, cover, joinLink } = project;
+  const { id, shortName, title, description, createdAt, cover, joinLink, difficulty } = project;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
 
@@ -159,6 +202,8 @@ export default function ProjectPostCard({ project, index }) {
           >
             {title}
           </TitleStyle>
+
+          {getChipFromDifficulty(difficulty)}
 
           {/* <InfoStyle>
             {POST_INFO.map((info, index) => (

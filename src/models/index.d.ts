@@ -1,5 +1,11 @@
 import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplify/datastore";
 
+export enum ProjectDifficulty {
+  INTRODUCTORY = "INTRODUCTORY",
+  INTERMEDIATE = "INTERMEDIATE",
+  ADVANCED = "ADVANCED"
+}
+
 export enum GroupType {
   PROJECT = "PROJECT",
   TALK = "TALK",
@@ -26,6 +32,7 @@ export declare class Project {
   readonly description?: string;
   readonly joinLink?: string;
   readonly shortName: string;
+  readonly difficulty?: ProjectDifficulty | keyof typeof ProjectDifficulty;
   constructor(init: ModelInit<Project>);
   static copyOf(source: Project, mutator: (draft: MutableModel<Project>) => MutableModel<Project> | void): Project;
 }

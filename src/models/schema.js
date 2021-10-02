@@ -117,6 +117,15 @@ export const schema = {
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
+                },
+                "difficulty": {
+                    "name": "difficulty",
+                    "isArray": false,
+                    "type": {
+                        "enum": "ProjectDifficulty"
+                    },
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -162,6 +171,14 @@ export const schema = {
         }
     },
     "enums": {
+        "ProjectDifficulty": {
+            "name": "ProjectDifficulty",
+            "values": [
+                "INTRODUCTORY",
+                "INTERMEDIATE",
+                "ADVANCED"
+            ]
+        },
         "GroupType": {
             "name": "GroupType",
             "values": [
@@ -172,5 +189,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "60a1a14c9c55ba81eb54ee9b2eb7469f"
+    "version": "5b1026f8efae6e50df150b6f9ca64381"
 };
