@@ -64,7 +64,7 @@ export default function Project() {
             <motion.div variants={varBounceIn}>
               <Box
                 component="img"
-                src={project.logo}
+                src={project.logo === null ? '/static/logo2.png' : project.logo}
                 sx={{ mx: 'auto', my: { xs: 5, sm: 0 }, height: 400, width: 400 }}
               />
             </motion.div>
