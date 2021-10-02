@@ -57,14 +57,13 @@ export default function Projects() {
           <Typography variant="h4" gutterBottom>
             Projects
           </Typography>
-          {/* <Button
+          <Button
             variant="contained"
-            component={RouterLink}
-            to="#"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfTOEUJ7mUhSpq4hP5KK-rIq8An3qBpqn4RLcm3zQo3vMFnEA/viewform?usp=sf_link"
             startIcon={<Icon icon={plusFill} />}
           >
-            New Project
-          </Button> */}
+            Suggest a project
+          </Button>
         </Stack>
 
         {/* <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
