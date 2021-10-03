@@ -1,17 +1,14 @@
 import PropTypes from 'prop-types';
-import { Icon } from '@iconify/react';
-import eyeFill from '@iconify/icons-eva/eye-fill';
 import { Link as RouterLink } from 'react-router-dom';
-import shareFill from '@iconify/icons-eva/share-fill';
-import messageCircleFill from '@iconify/icons-eva/message-circle-fill';
-import plusFill from '@iconify/icons-eva/plus-fill';
-// material
+
 import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
 import { Box, Link, Card, Grid, Avatar, Typography, CardContent, Button } from '@material-ui/core';
-// utils
+
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import '../../../styles/lazy-load-custom-opacity.css';
+
 import { fDate } from '../../../utils/formatTime';
-import { fShortenNumber } from '../../../utils/formatNumber';
-//
+
 import SvgIconStyle from '../../SvgIconStyle';
 
 // ----------------------------------------------------------------------
@@ -46,7 +43,7 @@ const InfoStyle = styled('div')(({ theme }) => ({
   color: theme.palette.text.disabled
 }));
 
-const CoverImgStyle = styled('img')({
+const CoverImgStyle = styled(LazyLoadImage)({
   top: 0,
   width: '100%',
   height: '100%',
@@ -63,7 +60,7 @@ CoursePostCard.propTypes = {
   index: PropTypes.number
 };
 
-export default function CoursePostCard({ course, index }) {
+export default function CoursePostCard({ course, index, scrollPosition }) {
   const { id, title, duration, shortName, createdAt, cover, joinLink, startDate } = course;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
@@ -118,7 +115,14 @@ export default function CoursePostCard({ course, index }) {
             }}
           />
 
-          <CoverImgStyle alt={title} src={cover} />
+          <CoverImgStyle
+            scrollPosition={scrollPosition}
+            alt={title}
+            width="100%"
+            height="100%"
+            effect="opacity"
+            src={cover}
+          />
         </CardMediaStyle>
 
         <CardContent

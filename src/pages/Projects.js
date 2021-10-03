@@ -6,6 +6,7 @@ import { API, Auth } from 'aws-amplify';
 // material
 import { Grid, Button, Container, Stack, Typography } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { trackWindowScroll } from 'react-lazy-load-image-component';
 // components
 import Page from '../components/Page';
 import {
@@ -26,7 +27,7 @@ const SORT_OPTIONS = [
 
 // ----------------------------------------------------------------------
 
-export default function Projects() {
+function Projects({ scrollPosition }) {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -74,10 +75,17 @@ export default function Projects() {
         <Grid container spacing={3}>
           {!isLoading &&
             projects.map((project, index) => (
-              <ProjectPostCard key={project.id} project={project} index={index} />
+              <ProjectPostCard
+                key={project.id}
+                project={project}
+                index={index}
+                scrollPosition={scrollPosition}
+              />
             ))}
         </Grid>
       </Container>
     </Page>
   );
 }
+
+export default trackWindowScroll(Projects);

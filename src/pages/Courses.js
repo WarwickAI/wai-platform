@@ -6,6 +6,7 @@ import { API, Auth } from 'aws-amplify';
 // material
 import { Grid, Button, Container, Stack, Typography } from '@material-ui/core';
 // components
+import { trackWindowScroll } from 'react-lazy-load-image-component';
 import Page from '../components/Page';
 import CoursePostCard from '../components/_dashboard/courses/CoursePostCard';
 import { listCourses } from '../graphql/queries';
@@ -20,7 +21,7 @@ const SORT_OPTIONS = [
 
 // ----------------------------------------------------------------------
 
-export default function Courses() {
+function Courses({ scrollPosition }) {
   const [courses, setCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -55,10 +56,17 @@ export default function Courses() {
 
         <Grid container spacing={3}>
           {courses.map((course, index) => (
-            <CoursePostCard key={course.id} course={course} index={index} />
+            <CoursePostCard
+              key={course.id}
+              course={course}
+              index={index}
+              scrollPosition={scrollPosition}
+            />
           ))}
         </Grid>
       </Container>
     </Page>
   );
 }
+
+export default trackWindowScroll(Courses);

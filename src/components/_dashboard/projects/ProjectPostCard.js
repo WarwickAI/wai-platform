@@ -1,19 +1,17 @@
 import PropTypes from 'prop-types';
-import { Icon } from '@iconify/react';
-import eyeFill from '@iconify/icons-eva/eye-fill';
 import { Link as RouterLink } from 'react-router-dom';
-import shareFill from '@iconify/icons-eva/share-fill';
-import messageCircleFill from '@iconify/icons-eva/message-circle-fill';
-// material
+
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Tooltip from '@material-ui/core/Tooltip';
 import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
 import { Box, Link, Card, Grid, Avatar, Typography, CardContent } from '@material-ui/core';
 import Chip from '@material-ui/core/Chip';
-// utils
+
 import { fDate } from '../../../utils/formatTime';
-import { fShortenNumber } from '../../../utils/formatNumber';
-//
+
 import SvgIconStyle from '../../SvgIconStyle';
+
+import '../../../styles/lazy-load-custom-opacity.css';
 
 // ----------------------------------------------------------------------
 
@@ -39,15 +37,7 @@ const AvatarStyle = styled(Avatar)(({ theme }) => ({
   bottom: theme.spacing(-2)
 }));
 
-const InfoStyle = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'flex-end',
-  marginTop: theme.spacing(3),
-  color: theme.palette.text.disabled
-}));
-
-const CoverImgStyle = styled('img')({
+const CoverImgStyle = styled(LazyLoadImage)({
   top: 0,
   width: '100%',
   height: '100%',
@@ -105,16 +95,10 @@ const getChipFromDifficulty = (difficulty) => {
   }
 };
 
-export default function ProjectPostCard({ project, index }) {
+export default function ProjectPostCard({ project, index, scrollPosition }) {
   const { id, shortName, title, description, createdAt, cover, joinLink, difficulty } = project;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
-
-  // const POST_INFO = [
-  //   { number: comment, icon: messageCircleFill },
-  //   { number: view, icon: eyeFill },
-  //   { number: share, icon: shareFill }
-  // ];
 
   return (
     <Grid item xs={12} sm={latestPostLarge ? 12 : 6} md={latestPostLarge ? 6 : 3}>
@@ -166,7 +150,14 @@ export default function ProjectPostCard({ project, index }) {
             }}
           />
 
-          <CoverImgStyle alt={title} src={cover} />
+          <CoverImgStyle
+            scrollPosition={scrollPosition}
+            alt={title}
+            width="100%"
+            height="100%"
+            effect="opacity"
+            src={cover}
+          />
         </CardMediaStyle>
 
         <CardContent
