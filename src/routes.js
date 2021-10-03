@@ -11,6 +11,7 @@ import User from './pages/User';
 import NotFound from './pages/Page404';
 import Projects from './pages/Projects';
 import Courses from './pages/Courses';
+import Course from './pages/Course';
 import Talks from './pages/Talks';
 import Project from './pages/Project';
 
@@ -24,6 +25,7 @@ export default function Router() {
       children: [
         { path: '/', element: <Navigate to="/home" replace /> },
         { path: 'dashboard', element: <DashboardApp /> },
+        { path: 'courses/:shortName', element: <Course /> },
         { path: 'courses', element: <Courses /> },
         { path: 'talks', element: <Talks /> },
         { path: 'user', element: <User /> },

@@ -1,6 +1,124 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getCourse = /* GraphQL */ `
+  query GetCourse($id: ID!) {
+    getCourse(id: $id) {
+      id
+      title
+      logo
+      cover
+      createdAt
+      description
+      joinLink
+      shortName
+      duration
+      startDate
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
+export const listCourses = /* GraphQL */ `
+  query ListCourses(
+    $filter: ModelCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        logo
+        cover
+        createdAt
+        description
+        joinLink
+        shortName
+        duration
+        startDate
+        _version
+        _deleted
+        _lastChangedAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const coursesByShortName = /* GraphQL */ `
+  query CoursesByShortName(
+    $shortName: String
+    $sortDirection: ModelSortDirection
+    $filter: ModelCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    coursesByShortName(
+      shortName: $shortName
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        logo
+        cover
+        createdAt
+        description
+        joinLink
+        shortName
+        duration
+        startDate
+        _version
+        _deleted
+        _lastChangedAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncCourses = /* GraphQL */ `
+  query SyncCourses(
+    $filter: ModelCourseFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncCourses(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        title
+        logo
+        cover
+        createdAt
+        description
+        joinLink
+        shortName
+        duration
+        startDate
+        _version
+        _deleted
+        _lastChangedAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const getGroup = /* GraphQL */ `
   query GetGroup($id: ID!) {
     getGroup(id: $id) {
@@ -79,6 +197,7 @@ export const getProject = /* GraphQL */ `
       description
       joinLink
       shortName
+      difficulty
       _version
       _deleted
       _lastChangedAt
@@ -137,6 +256,7 @@ export const projectsByShortName = /* GraphQL */ `
         description
         joinLink
         shortName
+        difficulty
         _version
         _deleted
         _lastChangedAt
@@ -169,6 +289,7 @@ export const syncProjects = /* GraphQL */ `
         description
         joinLink
         shortName
+        difficulty
         _version
         _deleted
         _lastChangedAt

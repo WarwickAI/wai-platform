@@ -64,7 +64,7 @@ CoursePostCard.propTypes = {
 };
 
 export default function CoursePostCard({ course, index }) {
-  const { id, title, description, createdAt, cover, joinLink } = course;
+  const { id, title, duration, shortName, createdAt, cover, joinLink, startDate } = course;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
 
@@ -131,15 +131,22 @@ export default function CoursePostCard({ course, index }) {
             })
           }}
         >
+          <Typography
+            gutterBottom
+            variant="caption"
+            sx={{ color: 'text.disabled', display: 'block' }}
+          >
+            Starting {fDate(startDate)} ({duration})
+          </Typography>
+
           <TitleStyle
-            to={joinLink}
+            to={shortName}
             color="inherit"
             variant="subtitle2"
             underline="hover"
             component={RouterLink}
             sx={{
-              typography: 'h5',
-              height: 60,
+              ...(latestPostLarge && { typography: 'h5', height: 60 }),
               ...((latestPostLarge || latestPost) && {
                 color: 'common.white'
               })
@@ -147,29 +154,6 @@ export default function CoursePostCard({ course, index }) {
           >
             {title}
           </TitleStyle>
-
-          <InfoStyle>
-            <Box
-              key={index}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                ml: index === 0 ? 0 : 1.5,
-                ...((latestPostLarge || latestPost) && {
-                  color: 'grey.500'
-                })
-              }}
-            >
-              <Button
-                variant="contained"
-                href={joinLink}
-                target="_blank"
-                startIcon={<Icon icon={plusFill} />}
-              >
-                Register interest
-              </Button>
-            </Box>
-          </InfoStyle>
         </CardContent>
       </Card>
     </Grid>

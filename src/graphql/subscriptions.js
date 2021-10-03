@@ -1,6 +1,66 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateCourse = /* GraphQL */ `
+  subscription OnCreateCourse {
+    onCreateCourse {
+      id
+      title
+      logo
+      cover
+      createdAt
+      description
+      joinLink
+      shortName
+      duration
+      startDate
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateCourse = /* GraphQL */ `
+  subscription OnUpdateCourse {
+    onUpdateCourse {
+      id
+      title
+      logo
+      cover
+      createdAt
+      description
+      joinLink
+      shortName
+      duration
+      startDate
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteCourse = /* GraphQL */ `
+  subscription OnDeleteCourse {
+    onDeleteCourse {
+      id
+      title
+      logo
+      cover
+      createdAt
+      description
+      joinLink
+      shortName
+      duration
+      startDate
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateGroup = /* GraphQL */ `
   subscription OnCreateGroup {
     onCreateGroup {
@@ -57,6 +117,7 @@ export const onCreateProject = /* GraphQL */ `
       description
       joinLink
       shortName
+      difficulty
       _version
       _deleted
       _lastChangedAt
@@ -75,6 +136,7 @@ export const onUpdateProject = /* GraphQL */ `
       description
       joinLink
       shortName
+      difficulty
       _version
       _deleted
       _lastChangedAt
@@ -93,6 +155,7 @@ export const onDeleteProject = /* GraphQL */ `
       description
       joinLink
       shortName
+      difficulty
       _version
       _deleted
       _lastChangedAt
