@@ -8,7 +8,7 @@ import messageCircleFill from '@iconify/icons-eva/message-circle-fill';
 import Tooltip from '@material-ui/core/Tooltip';
 import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
 import { Box, Link, Card, Grid, Avatar, Typography, CardContent } from '@material-ui/core';
-import ColoredChip from '../../ColoredChip';
+import Chip from '@material-ui/core/Chip';
 // utils
 import { fDate } from '../../../utils/formatTime';
 import { fShortenNumber } from '../../../utils/formatNumber';
@@ -66,7 +66,7 @@ ProjectPostCard.propTypes = {
 
 const DifficultyChip = ({ desc, title, color }) => (
   <Tooltip title={desc} aria-label="add">
-    <ColoredChip size="small" label={title} customColor={color} />
+    <Chip size="small" label={title} color={color} />
   </Tooltip>
 );
 
@@ -74,21 +74,21 @@ const IntroductoryChip = () => (
   <DifficultyChip
     desc="Suitable for people who have little or no experience coding AI. The goal of these projects mainly educational, allowing beginners to learn to write their own AI code."
     title="Introductory"
-    color="green"
+    color="primary"
   />
 );
 const IntermediateChip = () => (
   <DifficultyChip
     desc="Suitable for members who already have some AI knowledge; for instance those that have completed some AI courses on the Internet or with the society, or worked on a Beginner Project before. These projects are more independent than Beginner Projects."
     title="Intermediate"
-    color="orange"
+    color="warning"
   />
 );
 const AdvancedChip = () => (
   <DifficultyChip
     desc="Suitable for more experienced students who have a good understanding of AI  and are proficient at coding. These aim to solve more complex problems, with potential market applications."
     title="Advanced"
-    color="#eb4034"
+    color="error"
   />
 );
 
