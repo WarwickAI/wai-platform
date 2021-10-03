@@ -5,8 +5,6 @@ import { withStyles } from '@material-ui/styles';
 const GlobalStyles = withStyles((theme) => ({
   '@global': {
     '*': {
-      margin: 0,
-      padding: 0,
       boxSizing: 'border-box'
     },
     html: {

@@ -8,6 +8,7 @@ import { Grid, Button, Container, Stack, Typography } from '@material-ui/core';
 // components
 import Page from '../components/Page';
 import CoursePostCard from '../components/_dashboard/courses/CoursePostCard';
+import { listCourses } from '../graphql/queries';
 
 // ----------------------------------------------------------------------
 
@@ -17,31 +18,32 @@ const SORT_OPTIONS = [
   { value: 'oldest', label: 'Oldest' }
 ];
 
-const courses = [
-  {
-    id: 1,
-    title: 'WAI101 An introduction to Artificial Intelligence',
-    description: 'asd',
-    createdAt: new Date(),
-    cover: 'https://i.imgur.com/zmUBlm9.png',
-    joinLink:
-      'https://docs.google.com/forms/d/e/1FAIpQLSd0SEFShTHdv1gmJMwamReS3NOaRepbystqKvz_oo8wYxSU_w/viewform?usp=sf_link'
-  },
-  {
-    id: 2,
-    title: 'Introduction to Python',
-    description:
-      'Python. You’ve heard the name a hundred times - but do you know how to use it? If you’re interested in learning, need to brush up on your skills, or just want to work on a real Python project, then join our Introduction to Python course',
-    createdAt: new Date(),
-    cover: 'https://i.imgur.com/Ktg5tpi.png',
-    joinLink:
-      'https://docs.google.com/forms/d/e/1FAIpQLSd0SEFShTHdv1gmJMwamReS3NOaRepbystqKvz_oo8wYxSU_w/viewform?usp=sf_link'
-  }
-];
-
 // ----------------------------------------------------------------------
 
 export default function Courses() {
+  const [courses, setCourses] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  function fetchCourses() {
+    API.graphql({
+      query: listCourses,
+      variables: {
+        limit: 100
+      }
+    })
+      .then((result) => {
+        const loadedCourses = result.data.listCourses.items;
+
+        setCourses(loadedCourses);
+        setIsLoading(false);
+      })
+      .catch(console.log);
+  }
+
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
   return (
     <Page title="Courses">
       <Container>
