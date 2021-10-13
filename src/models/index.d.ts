@@ -14,6 +14,21 @@ export enum GroupType {
 
 
 
+export declare class Talk {
+  readonly id: string;
+  readonly title: string;
+  readonly logo?: string;
+  readonly cover?: string;
+  readonly createdAt?: string;
+  readonly description?: string;
+  readonly joinLink?: string;
+  readonly shortName: string;
+  readonly duration?: string;
+  readonly startDateAndTime?: string;
+  constructor(init: ModelInit<Talk>);
+  static copyOf(source: Talk, mutator: (draft: MutableModel<Talk>) => MutableModel<Talk> | void): Talk;
+}
+
 export declare class Course {
   readonly id: string;
   readonly title: string;

@@ -14,9 +14,10 @@ const GroupType = {
   "COURSE": "COURSE"
 };
 
-const { Course, Group, Project } = initSchema(schema);
+const { Talk, Course, Group, Project } = initSchema(schema);
 
 export {
+  Talk,
   Course,
   Group,
   Project,

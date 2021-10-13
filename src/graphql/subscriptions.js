@@ -1,6 +1,66 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateTalk = /* GraphQL */ `
+  subscription OnCreateTalk {
+    onCreateTalk {
+      id
+      title
+      logo
+      cover
+      createdAt
+      description
+      joinLink
+      shortName
+      duration
+      startDateAndTime
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateTalk = /* GraphQL */ `
+  subscription OnUpdateTalk {
+    onUpdateTalk {
+      id
+      title
+      logo
+      cover
+      createdAt
+      description
+      joinLink
+      shortName
+      duration
+      startDateAndTime
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteTalk = /* GraphQL */ `
+  subscription OnDeleteTalk {
+    onDeleteTalk {
+      id
+      title
+      logo
+      cover
+      createdAt
+      description
+      joinLink
+      shortName
+      duration
+      startDateAndTime
+      _version
+      _deleted
+      _lastChangedAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCourse = /* GraphQL */ `
   subscription OnCreateCourse {
     onCreateCourse {
