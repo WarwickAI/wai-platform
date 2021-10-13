@@ -13,6 +13,7 @@ import Projects from './pages/Projects';
 import Courses from './pages/Courses';
 import Course from './pages/Course';
 import Talks from './pages/Talks';
+import Talk from './pages/Talk';
 import Project from './pages/Project';
 
 // ----------------------------------------------------------------------
@@ -28,6 +29,7 @@ export default function Router() {
         { path: 'courses/:shortName', element: <Course /> },
         { path: 'courses', element: <Courses /> },
         { path: 'talks', element: <Talks /> },
+        { path: 'talks/:shortName', element: <Talk /> },
         { path: 'user', element: <User /> },
         { path: 'projects/:id', element: <Project /> },
         { path: 'projects', element: <Projects /> }

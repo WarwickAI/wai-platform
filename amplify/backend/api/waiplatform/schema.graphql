@@ -1,3 +1,16 @@
+type Talk @model @auth(rules: [{allow: public}]) @key(name: "talksByShortName", fields: ["shortName"], queryField: "talksByShortName") {
+  id: ID!
+  title: String!
+  logo: String
+  cover: String
+  createdAt: AWSDate
+  description: String
+  joinLink: String
+  shortName: String!
+  duration: String
+  startDateAndTime: AWSDateTime
+}
+
 type Course @model @auth(rules: [{allow: public}]) @key(name: "coursesByShortName", fields: ["shortName"], queryField: "coursesByShortName") {
   id: ID!
   title: String!

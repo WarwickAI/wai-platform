@@ -6,15 +6,10 @@ import { API, Auth } from 'aws-amplify';
 // material
 import { Grid, Button, Container, Stack, Typography } from '@material-ui/core';
 // components
+import { trackWindowScroll } from 'react-lazy-load-image-component';
 import Page from '../components/Page';
-import {
-  ProjectPostCard,
-  ProjectPostsSort,
-  ProjectPostsSearch
-} from '../components/_dashboard/projects';
-//
-import PROJECTS from '../_mocks_/blog';
-import { listProjects } from '../graphql/queries';
+import TalkPostCard from '../components/_dashboard/talks/TalkPostCard';
+import { listTalks } from '../graphql/queries';
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +21,30 @@ const SORT_OPTIONS = [
 
 // ----------------------------------------------------------------------
 
-export default function Talks() {
+function Talks({ scrollPosition }) {
+  const [talks, setTalks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  function fetchTalks() {
+    API.graphql({
+      query: listTalks,
+      variables: {
+        limit: 100
+      }
+    })
+      .then((result) => {
+        const loadedTalks = result.data.listTalks.items;
+
+        setTalks(loadedTalks);
+        setIsLoading(false);
+      })
+      .catch(console.log);
+  }
+
+  useEffect(() => {
+    fetchTalks();
+  }, []);
+
   return (
     <Page title="Talks">
       <Container>
@@ -36,8 +54,14 @@ export default function Talks() {
           </Typography>
         </Stack>
 
-        <Typography>This page is under construction.</Typography>
+        <Grid container spacing={3}>
+          {talks.map((talk, index) => (
+            <TalkPostCard key={talk.id} talk={talk} index={index} scrollPosition={scrollPosition} />
+          ))}
+        </Grid>
       </Container>
     </Page>
   );
 }
+
+export default trackWindowScroll(Talks);
