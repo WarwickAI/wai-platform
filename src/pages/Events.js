@@ -1,12 +1,45 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 // material
-import { Container, Stack, Typography } from '@material-ui/core';
+import { Container, Stack, Typography, Grid, Item } from '@material-ui/core';
 // components
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Page from '../components/Page';
 
 // ----------------------------------------------------------------------
 
+const calendarId = '16gnvov94ele73k1e7ekbaqr08@group.calendar.google.com';
+const localizer = momentLocalizer(moment);
+
 function Events() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    console.log(process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY);
+    fetch(
+      `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.error) {
+          // Something has gone wrong with fetching calendar data
+        } else {
+          const resEvents = result.items;
+          const rbcEvents = [];
+          resEvents.forEach((event) => {
+            const rbcEvent = {
+              title: event.summary,
+              start: new Date(event.start.dateTime),
+              end: new Date(event.end.dateTime)
+            };
+            rbcEvents.push(rbcEvent);
+          });
+          setEvents(rbcEvents);
+        }
+      });
+  }, []);
+
   return (
     <Page title="Events">
       <Container>
@@ -15,16 +48,15 @@ function Events() {
             Events
           </Typography>
         </Stack>
-
-        <iframe
-          title="PublicCalendar"
-          src="https://calendar.google.com/calendar/embed?src=16gnvov94ele73k1e7ekbaqr08%40group.calendar.google.com&ctz=Europe%2FLondon"
-          style={{ border: 0 }}
-          width="800"
-          height="600"
-          frameBorder="0"
-          scrolling="no"
-        />
+        <div style={{ height: 600 }}>
+          <Calendar
+            localizer={localizer}
+            events={events}
+            startAccessor="start"
+            endAccessor="end"
+            tooltipAccessor={(event) => event.title}
+          />
+        </div>
       </Container>
     </Page>
   );
