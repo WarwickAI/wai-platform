@@ -9,8 +9,18 @@ import Page from '../components/Page';
 
 // ID for WAI public calendar
 const calendarId = '16gnvov94ele73k1e7ekbaqr08@group.calendar.google.com';
+const calendars = [{ calendarId, color: '#207f76' }]; // Color set to WAI Green
 
-const calendars = [{ calendarId }];
+const calendarStyles = {
+  calendar: {
+    borderWidth: 5,
+    borderRadius: 10,
+    borderColor: '#f6f6f6'
+  },
+  today: {
+    backgroundColor: '#ececec'
+  }
+};
 
 function Events() {
   return (
@@ -22,9 +32,11 @@ function Events() {
           </Typography>
         </Stack>
         {/* TO-DO: make the height responsive */}
-        <div style={{ height: 600 }}>
-          <Calendar calendars={calendars} apiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY} />
-        </div>
+        <Calendar
+          calendars={calendars}
+          apiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY}
+          styles={calendarStyles}
+        />
       </Container>
     </Page>
   );
