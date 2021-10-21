@@ -2,10 +2,7 @@
 // this is an auto generated file. This will be overwritten
 
 export const createTalk = /* GraphQL */ `
-  mutation CreateTalk(
-    $input: CreateTalkInput!
-    $condition: ModelTalkConditionInput
-  ) {
+  mutation CreateTalk($input: CreateTalkInput!, $condition: ModelTalkConditionInput) {
     createTalk(input: $input, condition: $condition) {
       id
       title
@@ -25,10 +22,7 @@ export const createTalk = /* GraphQL */ `
   }
 `;
 export const updateTalk = /* GraphQL */ `
-  mutation UpdateTalk(
-    $input: UpdateTalkInput!
-    $condition: ModelTalkConditionInput
-  ) {
+  mutation UpdateTalk($input: UpdateTalkInput!, $condition: ModelTalkConditionInput) {
     updateTalk(input: $input, condition: $condition) {
       id
       title
@@ -48,10 +42,7 @@ export const updateTalk = /* GraphQL */ `
   }
 `;
 export const deleteTalk = /* GraphQL */ `
-  mutation DeleteTalk(
-    $input: DeleteTalkInput!
-    $condition: ModelTalkConditionInput
-  ) {
+  mutation DeleteTalk($input: DeleteTalkInput!, $condition: ModelTalkConditionInput) {
     deleteTalk(input: $input, condition: $condition) {
       id
       title
@@ -71,10 +62,7 @@ export const deleteTalk = /* GraphQL */ `
   }
 `;
 export const createCourse = /* GraphQL */ `
-  mutation CreateCourse(
-    $input: CreateCourseInput!
-    $condition: ModelCourseConditionInput
-  ) {
+  mutation CreateCourse($input: CreateCourseInput!, $condition: ModelCourseConditionInput) {
     createCourse(input: $input, condition: $condition) {
       id
       title
@@ -94,10 +82,7 @@ export const createCourse = /* GraphQL */ `
   }
 `;
 export const updateCourse = /* GraphQL */ `
-  mutation UpdateCourse(
-    $input: UpdateCourseInput!
-    $condition: ModelCourseConditionInput
-  ) {
+  mutation UpdateCourse($input: UpdateCourseInput!, $condition: ModelCourseConditionInput) {
     updateCourse(input: $input, condition: $condition) {
       id
       title
@@ -117,10 +102,7 @@ export const updateCourse = /* GraphQL */ `
   }
 `;
 export const deleteCourse = /* GraphQL */ `
-  mutation DeleteCourse(
-    $input: DeleteCourseInput!
-    $condition: ModelCourseConditionInput
-  ) {
+  mutation DeleteCourse($input: DeleteCourseInput!, $condition: ModelCourseConditionInput) {
     deleteCourse(input: $input, condition: $condition) {
       id
       title
@@ -140,10 +122,7 @@ export const deleteCourse = /* GraphQL */ `
   }
 `;
 export const createGroup = /* GraphQL */ `
-  mutation CreateGroup(
-    $input: CreateGroupInput!
-    $condition: ModelGroupConditionInput
-  ) {
+  mutation CreateGroup($input: CreateGroupInput!, $condition: ModelGroupConditionInput) {
     createGroup(input: $input, condition: $condition) {
       id
       type
@@ -158,10 +137,7 @@ export const createGroup = /* GraphQL */ `
   }
 `;
 export const updateGroup = /* GraphQL */ `
-  mutation UpdateGroup(
-    $input: UpdateGroupInput!
-    $condition: ModelGroupConditionInput
-  ) {
+  mutation UpdateGroup($input: UpdateGroupInput!, $condition: ModelGroupConditionInput) {
     updateGroup(input: $input, condition: $condition) {
       id
       type
@@ -176,10 +152,7 @@ export const updateGroup = /* GraphQL */ `
   }
 `;
 export const deleteGroup = /* GraphQL */ `
-  mutation DeleteGroup(
-    $input: DeleteGroupInput!
-    $condition: ModelGroupConditionInput
-  ) {
+  mutation DeleteGroup($input: DeleteGroupInput!, $condition: ModelGroupConditionInput) {
     deleteGroup(input: $input, condition: $condition) {
       id
       type
@@ -194,10 +167,7 @@ export const deleteGroup = /* GraphQL */ `
   }
 `;
 export const createProject = /* GraphQL */ `
-  mutation CreateProject(
-    $input: CreateProjectInput!
-    $condition: ModelProjectConditionInput
-  ) {
+  mutation CreateProject($input: CreateProjectInput!, $condition: ModelProjectConditionInput) {
     createProject(input: $input, condition: $condition) {
       id
       title
@@ -216,10 +186,7 @@ export const createProject = /* GraphQL */ `
   }
 `;
 export const updateProject = /* GraphQL */ `
-  mutation UpdateProject(
-    $input: UpdateProjectInput!
-    $condition: ModelProjectConditionInput
-  ) {
+  mutation UpdateProject($input: UpdateProjectInput!, $condition: ModelProjectConditionInput) {
     updateProject(input: $input, condition: $condition) {
       id
       title
@@ -238,10 +205,7 @@ export const updateProject = /* GraphQL */ `
   }
 `;
 export const deleteProject = /* GraphQL */ `
-  mutation DeleteProject(
-    $input: DeleteProjectInput!
-    $condition: ModelProjectConditionInput
-  ) {
+  mutation DeleteProject($input: DeleteProjectInput!, $condition: ModelProjectConditionInput) {
     deleteProject(input: $input, condition: $condition) {
       id
       title

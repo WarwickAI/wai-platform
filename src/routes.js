@@ -15,6 +15,7 @@ import Course from './pages/Course';
 import Talks from './pages/Talks';
 import Talk from './pages/Talk';
 import Project from './pages/Project';
+import Blog from './pages/Blog';
 
 // ----------------------------------------------------------------------
 
@@ -32,7 +33,8 @@ export default function Router() {
         { path: 'talks/:shortName', element: <Talk /> },
         { path: 'user', element: <User /> },
         { path: 'projects/:id', element: <Project /> },
-        { path: 'projects', element: <Projects /> }
+        { path: 'projects', element: <Projects /> },
+        { path: 'blog', element: <Blog /> }
       ]
     },
     {

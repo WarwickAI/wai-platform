@@ -5,6 +5,7 @@ import shoppingBagFill from '@iconify/icons-eva/shopping-bag-fill';
 import fileTextFill from '@iconify/icons-eva/file-text-fill';
 import lockFill from '@iconify/icons-eva/lock-fill';
 import micFill from '@iconify/icons-eva/mic-fill';
+import messageSquareFill from '@iconify/icons-eva/message-square-fill';
 import bookOpenFill from '@iconify/icons-eva/book-open-fill';
 
 // ----------------------------------------------------------------------
@@ -16,6 +17,11 @@ const sidebarConfig = [
     title: 'dashboard',
     path: '/dashboard',
     icon: getIcon(pieChart2Fill)
+  },
+  {
+    title: 'Blog',
+    path: '/blog',
+    icon: getIcon(messageSquareFill)
   },
   {
     title: 'projects',
