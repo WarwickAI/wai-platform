@@ -54,4 +54,7 @@ type Project @model @auth(rules: [{allow: public}, {allow: private, operations: 
   shortName: String!
   difficulty: ProjectDifficulty
 }
- 
+
+type Query {
+  echo(msg: String): String @function(name: "test-${env}")
+}
