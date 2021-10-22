@@ -1,7 +1,7 @@
 {
-    "features": {
-        "graphqltransformer": {
-            "enableiterativegsiupdates": true
-        }
+  "features": {
+    "graphqltransformer": {
+      "enableiterativegsiupdates": true
     }
+  }
 }
