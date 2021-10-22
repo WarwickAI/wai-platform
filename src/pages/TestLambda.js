@@ -22,7 +22,7 @@ function TestLambda() {
 
   return (
     <div>
-      <h3>Test Lambda Function</h3>
+      <h3>Test Lambda Function!</h3>
       <form onSubmit={tryItout}>
         <input name="theText" type="text" />
         <input type="submit" />
