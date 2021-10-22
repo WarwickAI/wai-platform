@@ -15,7 +15,7 @@ AWSCONFIG="{\
 \"AmplifyAppId\":\"${AWS_APP_ID}\"\
 }"
 AMPLIFY="{\
-\"envName\":\"${AWS_APP_ENV}\",\
+\"envName\":\"${AWS_BACKEND_BRANCH}\",\
 \"appId\":\"${AWS_APP_ID}\"\
 }"
 PROVIDERS="{\
