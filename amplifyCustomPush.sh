@@ -15,7 +15,7 @@ AWSCONFIG="{\
 \"AmplifyAppId\":\"${AWS_APP_ID}\"\
 }"
 AMPLIFY="{\
-\"envName\":\"dev\",\
+\"envName\":\"${AWS_APP_ENV}\",\
 \"appId\":\"${AWS_APP_ID}\"\
 }"
 PROVIDERS="{\
