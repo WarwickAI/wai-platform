@@ -16,6 +16,8 @@ import Talks from './pages/Talks';
 import Talk from './pages/Talk';
 import Project from './pages/Project';
 import TestLambda from './pages/TestLambda';
+import Blog from './pages/Blog';
+import Events from './pages/Events';
 
 // ----------------------------------------------------------------------
 
@@ -34,7 +36,9 @@ export default function Router() {
         { path: 'user', element: <User /> },
         { path: 'projects/:id', element: <Project /> },
         { path: 'projects', element: <Projects /> },
-        { path: 'testLambda', element: <TestLambda /> }
+        { path: 'testLambda', element: <TestLambda /> },
+        { path: 'blog', element: <Blog /> },
+        { path: 'events', element: <Events /> }
       ]
     },
     {
