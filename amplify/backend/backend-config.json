@@ -41,5 +41,12 @@
       "dependsOn": [],
       "customAuth": false
     }
+  },
+  "function": {
+    "test": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
   }
 }

@@ -63,3 +63,7 @@ type Project
   shortName: String!
   difficulty: ProjectDifficulty
 }
+
+type Query {
+  echo(msg: String): String @function(name: "test-${env}")
+}
