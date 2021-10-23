@@ -2,13 +2,15 @@
 
 ## Contributing
 
-If you'd like to contribute, 
+If you'd like to contribute,
 
-## Setup 
+## Setup
 
 See [setup](setup.md)
 
+## Development
 
+See [development](development.md)
 
 ## License
 

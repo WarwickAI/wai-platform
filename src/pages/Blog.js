@@ -1,13 +1,17 @@
+import { useEffect, useState } from 'react';
+import Axios from 'axios';
 import { Icon } from '@iconify/react';
-import plusFill from '@iconify/icons-eva/plus-fill';
+import externalLinkFill from '@iconify/icons-eva/external-link-fill';
 import { Link as RouterLink } from 'react-router-dom';
 // material
 import { Grid, Button, Container, Stack, Typography } from '@material-ui/core';
+import Chip from '@material-ui/core/Chip';
 // components
 import Page from '../components/Page';
 import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../components/_dashboard/blog';
-//
-import POSTS from '../_mocks_/blog';
+// helper
+import { parseDashDateTime } from '../utils/formatTime';
+import { mediumPageUrl, mediumRssFeedUrl } from '../utils/constants';
 
 // ----------------------------------------------------------------------
 
@@ -20,30 +24,57 @@ const SORT_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function Blog() {
+  const [posts, setPosts] = useState([]);
+
+  //  post schema: { cover, title, view, comment, share, author, createdAt }
+  useEffect(() => {
+    Axios.get(mediumRssFeedUrl)
+      .then((data) => {
+        const res = data.data.items;
+        const posts = res.map((mediumPost) => ({
+          id: mediumPost.guid,
+          cover: mediumPost.thumbnail,
+          title: mediumPost.title,
+          createdAt: parseDashDateTime(mediumPost.pubDate),
+          view: 1,
+          comment: 1,
+          share: 1,
+          favorite: 1,
+          author: {
+            name: mediumPost.author,
+            avatarUrl: `/static/logo2.png`
+          },
+          link: mediumPost.link,
+          categories: mediumPost.categories
+        }));
+        setPosts(posts);
+      })
+      .catch((e) => {
+        console.log('Failed to retrieve medium blogs.');
+        console.log(e);
+      });
+  }, []);
+
   return (
-    <Page title="Dashboard: Blog | Minimal-UI">
+    <Page title="Blog">
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
             Blog
           </Typography>
           <Button
+            href={mediumPageUrl}
+            color="info"
             variant="contained"
-            component={RouterLink}
-            to="#"
-            startIcon={<Icon icon={plusFill} />}
+            target="_blank"
+            startIcon={<Icon icon={externalLinkFill} />}
           >
-            New Post
+            View us on Medium
           </Button>
         </Stack>
 
-        <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
-          <BlogPostsSearch posts={POSTS} />
-          <BlogPostsSort options={SORT_OPTIONS} />
-        </Stack>
-
         <Grid container spacing={3}>
-          {POSTS.map((post, index) => (
+          {posts.map((post, index) => (
             <BlogPostCard key={post.id} post={post} index={index} />
           ))}
         </Grid>

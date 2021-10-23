@@ -1,4 +1,7 @@
-type Talk @model @auth(rules: [{allow: public}]) @key(name: "talksByShortName", fields: ["shortName"], queryField: "talksByShortName") {
+type Talk
+  @model
+  @auth(rules: [{ allow: public }])
+  @key(name: "talksByShortName", fields: ["shortName"], queryField: "talksByShortName") {
   id: ID!
   title: String!
   logo: String
@@ -11,7 +14,10 @@ type Talk @model @auth(rules: [{allow: public}]) @key(name: "talksByShortName", 
   startDateAndTime: AWSDateTime
 }
 
-type Course @model @auth(rules: [{allow: public}]) @key(name: "coursesByShortName", fields: ["shortName"], queryField: "coursesByShortName") {
+type Course
+  @model
+  @auth(rules: [{ allow: public }])
+  @key(name: "coursesByShortName", fields: ["shortName"], queryField: "coursesByShortName") {
   id: ID!
   title: String!
   logo: String
@@ -36,14 +42,17 @@ enum GroupType {
   COURSE
 }
 
-type Group @model @auth(rules: [{allow: public}]) {
+type Group @model @auth(rules: [{ allow: public }]) {
   id: ID!
   type: GroupType
   description: String
   name: String!
 }
 
-type Project @model @auth(rules: [{allow: public}, {allow: private, operations: [read]}]) @key(name: "projectsByShortName", fields: ["shortName"], queryField: "projectsByShortName") {
+type Project
+  @model
+  @auth(rules: [{ allow: public }, { allow: private, operations: [read] }])
+  @key(name: "projectsByShortName", fields: ["shortName"], queryField: "projectsByShortName") {
   id: ID!
   title: String
   logo: AWSURL
@@ -54,4 +63,7 @@ type Project @model @auth(rules: [{allow: public}, {allow: private, operations: 
   shortName: String!
   difficulty: ProjectDifficulty
 }
- 
+
+type Query {
+  echo(msg: String): String @function(name: "test-${env}")
+}

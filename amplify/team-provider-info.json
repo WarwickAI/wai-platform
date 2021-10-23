@@ -25,6 +25,82 @@
           "webClientId": "5ddmaprsi4kkrekbdqpp5a7a7p",
           "nativeClientId": "5ddmaprsi4kkrekbdqpp5a7a7p"
         }
+      },
+      "function": {
+        "test": {
+          "deploymentBucketName": "amplify-waiplatform-dev-222739-deployment",
+          "s3Key": "amplify-builds/test-49795952646536657357-build.zip"
+        }
+      }
+    }
+  },
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-waiplatform-staging-215807-authRole",
+      "UnauthRoleArn": "arn:aws:iam::818830417445:role/amplify-waiplatform-staging-215807-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::818830417445:role/amplify-waiplatform-staging-215807-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-waiplatform-staging-215807-deployment",
+      "UnauthRoleName": "amplify-waiplatform-staging-215807-unauthRole",
+      "StackName": "amplify-waiplatform-staging-215807",
+      "StackId": "arn:aws:cloudformation:eu-west-2:818830417445:stack/amplify-waiplatform-staging-215807/c3856a10-337a-11ec-b9b1-0ac6f9e90366",
+      "AmplifyAppId": "dtq3eg2x08klj"
+    },
+    "categories": {
+      "auth": {
+        "waiplatform": {
+          "userPoolId": "eu-west-2_iAg4gGRdW",
+          "userPoolName": "wai_platform",
+          "webClientId": "5ddmaprsi4kkrekbdqpp5a7a7p",
+          "nativeClientId": "5ddmaprsi4kkrekbdqpp5a7a7p"
+        }
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dtq3eg2x08klj",
+          "type": "cicd"
+        }
+      },
+      "function": {
+        "test": {
+          "deploymentBucketName": "amplify-waiplatform-staging-215807-deployment",
+          "s3Key": "amplify-builds/test-49795952646536657357-build.zip"
+        }
+      }
+    }
+  },
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-waiplatform-main-173823-authRole",
+      "UnauthRoleArn": "arn:aws:iam::818830417445:role/amplify-waiplatform-main-173823-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::818830417445:role/amplify-waiplatform-main-173823-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-waiplatform-main-173823-deployment",
+      "UnauthRoleName": "amplify-waiplatform-main-173823-unauthRole",
+      "StackName": "amplify-waiplatform-main-173823",
+      "StackId": "arn:aws:cloudformation:eu-west-2:818830417445:stack/amplify-waiplatform-main-173823/a5d17180-341f-11ec-934d-061872624b78",
+      "AmplifyAppId": "dtq3eg2x08klj"
+    },
+    "categories": {
+      "auth": {
+        "waiplatform": {
+          "userPoolId": "eu-west-2_iAg4gGRdW",
+          "userPoolName": "wai_platform",
+          "webClientId": "5ddmaprsi4kkrekbdqpp5a7a7p",
+          "nativeClientId": "5ddmaprsi4kkrekbdqpp5a7a7p"
+        }
+      },
+      "function": {
+        "test": {
+          "deploymentBucketName": "amplify-waiplatform-main-173823-deployment",
+          "s3Key": "amplify-builds/test-49795952646536657357-build.zip"
+        }
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dtq3eg2x08klj",
+          "type": "cicd"
+        }
       }
     }
   }
