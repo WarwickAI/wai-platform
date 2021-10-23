@@ -19,3 +19,8 @@ export function fToNow(date) {
     addSuffix: true
   });
 }
+
+// https://stackoverflow.com/a/31563586
+export function parseDashDateTime(dateAsString) {
+  return new Date(dateAsString.replace(/-/g, '/'));
+}

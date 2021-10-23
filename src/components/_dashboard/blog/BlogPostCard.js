@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
+import externalLinkFill from '@iconify/icons-eva/external-link-fill';
 import eyeFill from '@iconify/icons-eva/eye-fill';
 import { Link as RouterLink } from 'react-router-dom';
 import shareFill from '@iconify/icons-eva/share-fill';
 import messageCircleFill from '@iconify/icons-eva/message-circle-fill';
 // material
 import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
-import { Box, Link, Card, Grid, Avatar, Typography, CardContent } from '@material-ui/core';
+import { Box, Link, Card, Grid, Avatar, Typography, CardContent, Chip } from '@material-ui/core';
 // utils
 import { fDate } from '../../../utils/formatTime';
 import { fShortenNumber } from '../../../utils/formatNumber';
+import { mediumPageUrl } from '../../../utils/constants';
 //
 import SvgIconStyle from '../../SvgIconStyle';
 
@@ -61,15 +63,9 @@ BlogPostCard.propTypes = {
 };
 
 export default function BlogPostCard({ post, index }) {
-  const { cover, title, view, comment, share, author, createdAt } = post;
+  const { cover, title, view, comment, share, author, createdAt, link, categories } = post;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
-
-  const POST_INFO = [
-    { number: comment, icon: messageCircleFill },
-    { number: view, icon: eyeFill },
-    { number: share, icon: shareFill }
-  ];
 
   return (
     <Grid item xs={12} sm={latestPostLarge ? 12 : 6} md={latestPostLarge ? 6 : 3}>
@@ -107,19 +103,23 @@ export default function BlogPostCard({ post, index }) {
               ...((latestPostLarge || latestPost) && { display: 'none' })
             }}
           />
-          <AvatarStyle
-            alt={author.name}
-            src={author.avatarUrl}
-            sx={{
-              ...((latestPostLarge || latestPost) && {
-                zIndex: 9,
-                top: 24,
-                left: 24,
-                width: 40,
-                height: 40
-              })
-            }}
-          />
+          <a href={mediumPageUrl} target="_blank" rel="noreferrer">
+            <AvatarStyle
+              alt={author.name}
+              src={author.avatarUrl}
+              sx={{
+                ...((latestPostLarge || latestPost) && {
+                  zIndex: 9,
+                  top: 24,
+                  left: 24,
+                  width: 40,
+                  height: 40,
+                  border: '3px solid white',
+                  backgroundColor: 'white'
+                })
+              }}
+            />
+          </a>
 
           <CoverImgStyle alt={title} src={cover} />
         </CardMediaStyle>
@@ -139,15 +139,16 @@ export default function BlogPostCard({ post, index }) {
             variant="caption"
             sx={{ color: 'text.disabled', display: 'block' }}
           >
-            {fDate(createdAt)}
+            {fDate(createdAt)} — {author.name}
           </Typography>
 
           <TitleStyle
-            to="#"
+            href={link}
+            target="_blank"
+            rel="noreferrer"
             color="inherit"
             variant="subtitle2"
             underline="hover"
-            component={RouterLink}
             sx={{
               ...(latestPostLarge && { typography: 'h5', height: 60 }),
               ...((latestPostLarge || latestPost) && {
@@ -156,24 +157,12 @@ export default function BlogPostCard({ post, index }) {
             }}
           >
             {title}
+            <Box component={Icon} icon={externalLinkFill} sx={{ width: 16, height: 16, ml: 0.6 }} />
           </TitleStyle>
 
           <InfoStyle>
-            {POST_INFO.map((info, index) => (
-              <Box
-                key={index}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  ml: index === 0 ? 0 : 1.5,
-                  ...((latestPostLarge || latestPost) && {
-                    color: 'grey.500'
-                  })
-                }}
-              >
-                <Box component={Icon} icon={info.icon} sx={{ width: 16, height: 16, mr: 0.5 }} />
-                <Typography variant="caption">{fShortenNumber(info.number)}</Typography>
-              </Box>
+            {categories?.map((category) => (
+              <Chip sx={{ ml: 0.6, mt: 0.6 }} size="small" label={category} color="secondary" />
             ))}
           </InfoStyle>
         </CardContent>
