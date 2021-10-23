@@ -18,5 +18,8 @@ Note; the instructions are for setting up in a Linux environment - if you don't 
 
 - `amplify init`
   - Y to existing env
-  - `dev` env
+  - select `dev` env (do not push backend changes directly to `staging` or `main`, see [development](development.md) for more)
   - auth with aws profile - use local profile made earlier
+
+- `git checkout dev`
+  - this will make sure you are making changes to the correct environment
