@@ -1,4 +1,30 @@
 {
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-waiplatform-main-135607-authRole",
+      "UnauthRoleArn": "arn:aws:iam::818830417445:role/amplify-waiplatform-main-135607-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::818830417445:role/amplify-waiplatform-main-135607-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-waiplatform-main-135607-deployment",
+      "UnauthRoleName": "amplify-waiplatform-main-135607-unauthRole",
+      "StackName": "amplify-waiplatform-main-135607",
+      "StackId": "arn:aws:cloudformation:eu-west-2:818830417445:stack/amplify-waiplatform-main-135607/ae8f8590-1175-11ec-b073-023b28e97f64",
+      "AmplifyAppId": "dtq3eg2x08klj"
+    },
+    "categories": {
+      "auth": {
+        "waiplatform": {
+          "userPoolId": "eu-west-2_iAg4gGRdW",
+          "userPoolName": "wai_platform",
+          "webClientId": "5ddmaprsi4kkrekbdqpp5a7a7p",
+          "nativeClientId": "5ddmaprsi4kkrekbdqpp5a7a7p"
+        }
+      },
+      "function": {
+        "test": {}
+      }
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-waiplatform-dev-222739-authRole",

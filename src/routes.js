@@ -36,7 +36,7 @@ export default function Router() {
         { path: 'user', element: <User /> },
         { path: 'projects/:id', element: <Project /> },
         { path: 'projects', element: <Projects /> },
-        { path: 'testLambda', element: <TestLambda /> }
+        { path: 'testLambda', element: <TestLambda /> },
         { path: 'blog', element: <Blog /> },
         { path: 'events', element: <Events /> }
       ]
