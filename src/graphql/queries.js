@@ -27,7 +27,11 @@ export const getTalk = /* GraphQL */ `
   }
 `;
 export const listTalks = /* GraphQL */ `
-  query ListTalks($filter: ModelTalkFilterInput, $limit: Int, $nextToken: String) {
+  query ListTalks(
+    $filter: ModelTalkFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
     listTalks(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
@@ -93,7 +97,12 @@ export const syncTalks = /* GraphQL */ `
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncTalks(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+    syncTalks(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
       items {
         id
         title
@@ -136,7 +145,11 @@ export const getCourse = /* GraphQL */ `
   }
 `;
 export const listCourses = /* GraphQL */ `
-  query ListCourses($filter: ModelCourseFilterInput, $limit: Int, $nextToken: String) {
+  query ListCourses(
+    $filter: ModelCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
     listCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
@@ -202,7 +215,12 @@ export const syncCourses = /* GraphQL */ `
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncCourses(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+    syncCourses(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
       items {
         id
         title
@@ -240,7 +258,11 @@ export const getGroup = /* GraphQL */ `
   }
 `;
 export const listGroups = /* GraphQL */ `
-  query ListGroups($filter: ModelGroupFilterInput, $limit: Int, $nextToken: String) {
+  query ListGroups(
+    $filter: ModelGroupFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
     listGroups(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
@@ -265,7 +287,12 @@ export const syncGroups = /* GraphQL */ `
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncGroups(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+    syncGroups(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
       items {
         id
         type
@@ -302,7 +329,11 @@ export const getProject = /* GraphQL */ `
   }
 `;
 export const listProjects = /* GraphQL */ `
-  query ListProjects($filter: ModelProjectFilterInput, $limit: Int, $nextToken: String) {
+  query ListProjects(
+    $filter: ModelProjectFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
     listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
@@ -366,7 +397,12 @@ export const syncProjects = /* GraphQL */ `
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncProjects(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+    syncProjects(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
       items {
         id
         title
