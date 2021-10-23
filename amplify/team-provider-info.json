@@ -64,7 +64,7 @@
       "function": {
         "test": {
           "deploymentBucketName": "amplify-waiplatform-staging-215807-deployment",
-          "s3Key": "amplify-builds/test-6844796b666c645a6c42-build.zip"
+          "s3Key": "amplify-builds/test-49795952646536657357-build.zip"
         }
       }
     }
