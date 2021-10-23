@@ -25,6 +25,9 @@
           "webClientId": "5ddmaprsi4kkrekbdqpp5a7a7p",
           "nativeClientId": "5ddmaprsi4kkrekbdqpp5a7a7p"
         }
+      },
+      "function": {
+        "test": {}
       }
     }
   },
