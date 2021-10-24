@@ -30,6 +30,10 @@
         "test": {
           "deploymentBucketName": "amplify-waiplatform-dev-222739-deployment",
           "s3Key": "amplify-builds/test-49795952646536657357-build.zip"
+        },
+        "waiplatformLoginTrigger": {
+          "deploymentBucketName": "amplify-waiplatform-dev-222739-deployment",
+          "s3Key": "amplify-builds/waiplatformLoginTrigger-547a4850437649753275-build.zip"
         }
       }
     }

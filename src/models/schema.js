@@ -1,5 +1,39 @@
 export const schema = {
     "models": {
+        "User": {
+            "name": "User",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "email": {
+                    "name": "email",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "Users",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                }
+            ]
+        },
         "Talk": {
             "name": "Talk",
             "fields": {
@@ -407,5 +441,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "6c8308ad4d605e03b07e13ba03b7a0e5"
+    "version": "0488a43ee586e1945076af11f0e8a80a"
 };

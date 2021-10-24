@@ -1,3 +1,11 @@
+type User
+  @model
+{
+  id: ID!
+  name: String
+  email: String
+}
+
 type Talk
   @model
   @auth(rules: [{ allow: public }])
