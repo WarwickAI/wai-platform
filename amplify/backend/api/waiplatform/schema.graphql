@@ -1,6 +1,15 @@
-type User @model @auth(rules: [{ allow: groups, groups: ["Admin"] }, { allow: private, provider: iam }]) {
+type User
+  @model
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "username", operations: [read] }
+      { allow: groups, groups: ["Admin"] }
+      { allow: private, provider: iam }
+    ]
+  ) {
   id: ID!
-  email: String
+  username: String!,
+  email: String!
 }
 
 type Talk

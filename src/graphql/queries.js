@@ -10,6 +10,7 @@ export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {
       id
+      username
       email
       _version
       _deleted
@@ -28,6 +29,7 @@ export const listUsers = /* GraphQL */ `
     listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        username
         email
         _version
         _deleted
@@ -55,6 +57,7 @@ export const syncUsers = /* GraphQL */ `
     ) {
       items {
         id
+        username
         email
         _version
         _deleted
