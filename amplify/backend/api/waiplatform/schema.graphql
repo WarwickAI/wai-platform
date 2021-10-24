@@ -1,8 +1,5 @@
-type User
-  @model
-{
+type User @model @auth(rules: [{ allow: groups, groups: ["Admin"] }]) {
   id: ID!
-  name: String
   email: String
 }
 

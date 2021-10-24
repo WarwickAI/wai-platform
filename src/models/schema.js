@@ -10,13 +10,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "name": {
-                    "name": "name",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "email": {
                     "name": "email",
                     "isArray": false,
@@ -31,6 +24,27 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "groupClaim": "cognito:groups",
+                                "provider": "userPools",
+                                "allow": "groups",
+                                "groups": [
+                                    "Admin"
+                                ],
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -441,5 +455,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "0488a43ee586e1945076af11f0e8a80a"
+    "version": "22aedb1a0d29e0f709a5b6f4d80358bd"
 };

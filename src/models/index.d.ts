@@ -16,7 +16,6 @@ export enum GroupType {
 
 export declare class User {
   readonly id: string;
-  readonly name?: string;
   readonly email?: string;
   constructor(init: ModelInit<User>);
   static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
