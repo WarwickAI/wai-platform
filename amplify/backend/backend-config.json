@@ -61,6 +61,20 @@
           ]
         }
       ]
+    },
+    "waiplatformPreSignUpTest2": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "waiplatform",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ]
     }
   }
 }
