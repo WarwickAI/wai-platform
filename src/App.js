@@ -16,6 +16,9 @@ import { setAuthDetails } from './stores/authSlice';
 
 // ----------------------------------------------------------------------
 
+console.log(appSettings);
+console.log(process.env.NODE_ENV);
+
 Amplify.configure(appSettings);
 
 const onAuthEvent = (data) => {
