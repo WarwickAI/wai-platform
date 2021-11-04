@@ -10,7 +10,7 @@ const appSettings = {
         : process.env.REACT_APP_REDIRECT_SIGN_IN,
     redirectSignOut:
       process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000'
+        ? 'http://localhost:3000/'
         : process.env.REACT_APP_REDIRECT_SIGN_OUT
   }
 };

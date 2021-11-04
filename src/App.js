@@ -26,6 +26,14 @@ const onAuthEvent = (data) => {
 
   if (payload.event === 'signIn') {
     Auth.currentAuthenticatedUser().then((user) => store.dispatch(setAuthDetails(user.attributes)));
+  } else if (payload.event === 'signOut') {
+    store.dispatch(
+      setAuthDetails({
+        givenName: '',
+        familyName: '',
+        email: ''
+      })
+    );
   }
 };
 
