@@ -74,15 +74,17 @@ export default function Course() {
 
             <ReactMarkdown children={course.description} />
 
-            <Button
-              variant="contained"
-              href={course.joinLink}
-              target="_blank"
-              sx={{ my: { xs: 5, sm: 5 } }}
-              startIcon={<Icon icon={plusFill} />}
-            >
-              Join Course
-            </Button>
+            {course.joinLink && (
+              <Button
+                variant="contained"
+                href={course.joinLink}
+                target="_blank"
+                sx={{ my: { xs: 5, sm: 5 } }}
+                startIcon={<Icon icon={plusFill} />}
+              >
+                Join Course
+              </Button>
+            )}
           </Box>
         </MotionContainer>
       </Container>
