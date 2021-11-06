@@ -62,6 +62,7 @@ export const createTalk = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -85,6 +86,7 @@ export const updateTalk = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -108,6 +110,7 @@ export const deleteTalk = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -131,6 +134,7 @@ export const createCourse = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -154,6 +158,7 @@ export const updateCourse = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -177,6 +182,7 @@ export const deleteCourse = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -254,6 +260,7 @@ export const createProject = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -276,6 +283,7 @@ export const updateProject = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -298,6 +306,7 @@ export const deleteProject = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink

@@ -27,6 +27,7 @@ export declare class Talk {
   readonly title: string;
   readonly logo?: string;
   readonly cover?: string;
+  readonly display?: boolean;
   readonly createdAt?: string;
   readonly description?: string;
   readonly joinLink?: string;
@@ -42,6 +43,7 @@ export declare class Course {
   readonly title: string;
   readonly logo?: string;
   readonly cover?: string;
+  readonly display?: boolean;
   readonly createdAt?: string;
   readonly description?: string;
   readonly joinLink?: string;
@@ -66,6 +68,7 @@ export declare class Project {
   readonly title?: string;
   readonly logo?: string;
   readonly cover?: string;
+  readonly display?: boolean;
   readonly createdAt?: string;
   readonly description?: string;
   readonly joinLink?: string;
