@@ -55,9 +55,19 @@ function Talks({ scrollPosition }) {
         </Stack>
 
         <Grid container spacing={3}>
-          {talks.map((talk, index) => (
-            <TalkPostCard key={talk.id} talk={talk} index={index} scrollPosition={scrollPosition} />
-          ))}
+          {talks.map((talk, index) => {
+            if (talk.display) {
+              return (
+                <TalkPostCard
+                  key={talk.id}
+                  talk={talk}
+                  index={index}
+                  scrollPosition={scrollPosition}
+                />
+              );
+            }
+            return <></>;
+          })}
         </Grid>
       </Container>
     </Page>

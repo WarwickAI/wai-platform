@@ -105,6 +105,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "display": {
+                    "name": "display",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -211,6 +218,13 @@ export const schema = {
                     "name": "cover",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "display": {
+                    "name": "display",
+                    "isArray": false,
+                    "type": "Boolean",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -382,6 +396,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "display": {
+                    "name": "display",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -481,5 +502,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "fc85195e5d2d2f56910e9c70859b2c05"
+    "version": "c717136c7cc656ead990dcdf003ccff9"
 };

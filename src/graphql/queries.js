@@ -77,6 +77,7 @@ export const getTalk = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -102,6 +103,7 @@ export const listTalks = /* GraphQL */ `
         title
         logo
         cover
+        display
         createdAt
         description
         joinLink
@@ -138,6 +140,7 @@ export const talksByShortName = /* GraphQL */ `
         title
         logo
         cover
+        display
         createdAt
         description
         joinLink
@@ -172,6 +175,7 @@ export const syncTalks = /* GraphQL */ `
         title
         logo
         cover
+        display
         createdAt
         description
         joinLink
@@ -195,6 +199,7 @@ export const getCourse = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -220,6 +225,7 @@ export const listCourses = /* GraphQL */ `
         title
         logo
         cover
+        display
         createdAt
         description
         joinLink
@@ -256,6 +262,7 @@ export const coursesByShortName = /* GraphQL */ `
         title
         logo
         cover
+        display
         createdAt
         description
         joinLink
@@ -290,6 +297,7 @@ export const syncCourses = /* GraphQL */ `
         title
         logo
         cover
+        display
         createdAt
         description
         joinLink
@@ -380,6 +388,7 @@ export const getProject = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -404,6 +413,7 @@ export const listProjects = /* GraphQL */ `
         title
         logo
         cover
+        display
         createdAt
         description
         joinLink
@@ -439,6 +449,7 @@ export const projectsByShortName = /* GraphQL */ `
         title
         logo
         cover
+        display
         createdAt
         description
         joinLink
@@ -472,6 +483,7 @@ export const syncProjects = /* GraphQL */ `
         title
         logo
         cover
+        display
         createdAt
         description
         joinLink

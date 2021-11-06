@@ -50,6 +50,7 @@ export const onCreateTalk = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -70,6 +71,7 @@ export const onUpdateTalk = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -90,6 +92,7 @@ export const onDeleteTalk = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -110,6 +113,7 @@ export const onCreateCourse = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -130,6 +134,7 @@ export const onUpdateCourse = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -150,6 +155,7 @@ export const onDeleteCourse = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -215,6 +221,7 @@ export const onCreateProject = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -234,6 +241,7 @@ export const onUpdateProject = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
@@ -253,6 +261,7 @@ export const onDeleteProject = /* GraphQL */ `
       title
       logo
       cover
+      display
       createdAt
       description
       joinLink
