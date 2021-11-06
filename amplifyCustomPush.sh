@@ -22,9 +22,9 @@ PROVIDERS="{\
 \"awscloudformation\":${AWSCONFIG}\
 }"
 AUTHCONFIG="{\
-\"userPoolId\": \"eu-west-2_iAg4gGRdW\",\
-\"webClientId\": \"5ddmaprsi4kkrekbdqpp5a7a7p\",\
-\"nativeClientId\": \"5ddmaprsi4kkrekbdqpp5a7a7p\"\
+\"userPoolId\": \"eu-west-2_swavRQzxU\",\
+\"webClientId\": \"6p16mvnvtc79sn2rp3s2ajkva1\",\
+\"nativeClientId\": \"6p16mvnvtc79sn2rp3s2ajkva1\"\
 }"
 CATEGORIES="{\
 \"auth\":$AUTHCONFIG\

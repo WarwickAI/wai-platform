@@ -34,7 +34,7 @@
     }
   },
   "auth": {
-    "waiplatform": {
+    "waiplatformb58c98f7": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",
@@ -43,10 +43,19 @@
     }
   },
   "function": {
-    "test": {
+    "waiplatformSignupTrigger": {
       "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "waiplatform",
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ]
+        }
+      ]
     }
   }
 }
