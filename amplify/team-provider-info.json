@@ -64,7 +64,7 @@
       "function": {
         "waiplatformSignupTrigger": {
           "deploymentBucketName": "amplify-waiplatform-staging-215807-deployment",
-          "s3Key": "amplify-builds/waiplatformSignupTrigger-5979795843626a4e325a-build.zip"
+          "s3Key": "amplify-builds/waiplatformSignupTrigger-7845365656526d376572-build.zip"
         }
       }
     }
