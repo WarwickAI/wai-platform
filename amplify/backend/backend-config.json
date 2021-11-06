@@ -34,7 +34,7 @@
     }
   },
   "auth": {
-    "waiplatform": {
+    "waiplatform21191bf4": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",
@@ -43,12 +43,7 @@
     }
   },
   "function": {
-    "test": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "waiplatformLoginTrigger": {
+    "waiplatformSignupTrigger": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
@@ -74,7 +69,7 @@
             "UserPoolId"
           ]
         }
-      ]
+      
     }
   }
 }

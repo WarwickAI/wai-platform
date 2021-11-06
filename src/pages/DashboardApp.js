@@ -33,7 +33,7 @@ function DashboardApp() {
         <Grid container spacing={3}>
           <Grid item xs={6} sm={8} md={6} spacing={0} sx={{ pb: 5 }}>
             <Typography variant="h4">
-              Welcome back to the WAI Platform!{' '}
+              Welcome back {userAttributes.givenName} to the WAI Platform!{' '}
               <span role="img" aria-label="emoji">
                 🌠
               </span>

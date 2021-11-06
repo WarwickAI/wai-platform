@@ -19,21 +19,17 @@
         }
       },
       "auth": {
-        "waiplatform": {
-          "userPoolId": "eu-west-2_iAg4gGRdW",
-          "userPoolName": "wai_platform",
-          "webClientId": "5ddmaprsi4kkrekbdqpp5a7a7p",
-          "nativeClientId": "5ddmaprsi4kkrekbdqpp5a7a7p"
+        "waiplatformb58c98f7": {
+          "userPoolId": "eu-west-2_swavRQzxU",
+          "userPoolName": "wai_platform_v2",
+          "webClientId": "6p16mvnvtc79sn2rp3s2ajkva1",
+          "nativeClientId": "6p16mvnvtc79sn2rp3s2ajkva1"
         }
       },
       "function": {
-        "test": {
+        "waiplatformSignupTrigger": {
           "deploymentBucketName": "amplify-waiplatform-dev-222739-deployment",
-          "s3Key": "amplify-builds/test-49795952646536657357-build.zip"
-        },
-        "waiplatformLoginTrigger": {
-          "deploymentBucketName": "amplify-waiplatform-dev-222739-deployment",
-          "s3Key": "amplify-builds/waiplatformLoginTrigger-6943717735582f4a636a-build.zip"
+          "s3Key": "amplify-builds/waiplatformSignupTrigger-4a767367675a576f4c77-build.zip"
         }
       }
     }
@@ -94,24 +90,28 @@
       "AmplifyAppId": "dtq3eg2x08klj"
     },
     "categories": {
-      "auth": {
-        "waiplatform": {
-          "userPoolId": "eu-west-2_iAg4gGRdW",
-          "userPoolName": "wai_platform",
-          "webClientId": "5ddmaprsi4kkrekbdqpp5a7a7p",
-          "nativeClientId": "5ddmaprsi4kkrekbdqpp5a7a7p"
-        }
-      },
       "function": {
         "test": {
           "deploymentBucketName": "amplify-waiplatform-main-173823-deployment",
           "s3Key": "amplify-builds/test-49795952646536657357-build.zip"
+        },
+        "waiplatformSignupTrigger": {
+          "deploymentBucketName": "amplify-waiplatform-main-173823-deployment",
+          "s3Key": "amplify-builds/waiplatformSignupTrigger-386a745874377568756d-build.zip"
         }
       },
       "hosting": {
         "amplifyhosting": {
           "appId": "dtq3eg2x08klj",
           "type": "cicd"
+        }
+      },
+      "auth": {
+        "waiplatform21191bf4": {
+          "userPoolId": "eu-west-2_swavRQzxU",
+          "userPoolName": "wai_platform_v2",
+          "webClientId": "6p16mvnvtc79sn2rp3s2ajkva1",
+          "nativeClientId": "6p16mvnvtc79sn2rp3s2ajkva1"
         }
       }
     }

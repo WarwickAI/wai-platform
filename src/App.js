@@ -16,6 +16,9 @@ import { setAuthDetails } from './stores/authSlice';
 
 // ----------------------------------------------------------------------
 
+console.log(appSettings);
+console.log(process.env.NODE_ENV);
+
 Amplify.configure(appSettings);
 
 const onAuthEvent = (data) => {
@@ -23,6 +26,14 @@ const onAuthEvent = (data) => {
 
   if (payload.event === 'signIn') {
     Auth.currentAuthenticatedUser().then((user) => store.dispatch(setAuthDetails(user.attributes)));
+  } else if (payload.event === 'signOut') {
+    store.dispatch(
+      setAuthDetails({
+        givenName: '',
+        familyName: '',
+        email: ''
+      })
+    );
   }
 };
 
