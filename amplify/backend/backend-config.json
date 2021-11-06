@@ -34,7 +34,7 @@
     }
   },
   "auth": {
-    "waiplatform21191bf4": {
+    "waiplatform86d856a3": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",

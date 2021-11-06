@@ -74,15 +74,17 @@ export default function Talk() {
 
             <ReactMarkdown children={talk.description} />
 
-            <Button
-              variant="contained"
-              href={talk.joinLink}
-              target="_blank"
-              sx={{ my: { xs: 5, sm: 5 } }}
-              startIcon={<Icon icon={plusFill} />}
-            >
-              Join Talk
-            </Button>
+            {talk.joinLink && (
+              <Button
+                variant="contained"
+                href={talk.joinLink}
+                target="_blank"
+                sx={{ my: { xs: 5, sm: 5 } }}
+                startIcon={<Icon icon={plusFill} />}
+              >
+                Join Talk
+              </Button>
+            )}
           </Box>
         </MotionContainer>
       </Container>
