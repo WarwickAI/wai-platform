@@ -89,7 +89,7 @@
         },
         "waiplatformSignupTrigger": {
           "deploymentBucketName": "amplify-waiplatform-main-173823-deployment",
-          "s3Key": "amplify-builds/waiplatformSignupTrigger-386a745874377568756d-build.zip"
+          "s3Key": "amplify-builds/waiplatformSignupTrigger-7845365656526d376572-build.zip"
         }
       },
       "hosting": {
@@ -99,7 +99,7 @@
         }
       },
       "auth": {
-        "waiplatform21191bf4": {
+        "waiplatform7b627010": {
           "userPoolId": "eu-west-2_swavRQzxU",
           "userPoolName": "wai_platform_v2",
           "webClientId": "6p16mvnvtc79sn2rp3s2ajkva1",
