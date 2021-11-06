@@ -18,18 +18,18 @@
           "type": "cicd"
         }
       },
+      "function": {
+        "waiplatformSignupTrigger": {
+          "deploymentBucketName": "amplify-waiplatform-dev-222739-deployment",
+          "s3Key": "amplify-builds/waiplatformSignupTrigger-7845365656526d376572-build.zip"
+        }
+      },
       "auth": {
-        "waiplatformb58c98f7": {
+        "waiplatform07145691": {
           "userPoolId": "eu-west-2_swavRQzxU",
           "userPoolName": "wai_platform_v2",
           "webClientId": "6p16mvnvtc79sn2rp3s2ajkva1",
           "nativeClientId": "6p16mvnvtc79sn2rp3s2ajkva1"
-        }
-      },
-      "function": {
-        "waiplatformSignupTrigger": {
-          "deploymentBucketName": "amplify-waiplatform-dev-222739-deployment",
-          "s3Key": "amplify-builds/waiplatformSignupTrigger-50687a72503579754771-build.zip"
         }
       }
     }
