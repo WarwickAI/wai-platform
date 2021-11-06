@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "auth": {
+      "waiplatform": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
