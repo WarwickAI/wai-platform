@@ -55,14 +55,19 @@ function Courses({ scrollPosition }) {
         </Stack>
 
         <Grid container spacing={3}>
-          {courses.map((course, index) => (
-            <CoursePostCard
-              key={course.id}
-              course={course}
-              index={index}
-              scrollPosition={scrollPosition}
-            />
-          ))}
+          {courses.map((course, index) => {
+            if (course.display) {
+              return (
+                <CoursePostCard
+                  key={course.id}
+                  course={course}
+                  index={index}
+                  scrollPosition={scrollPosition}
+                />
+              );
+            }
+            return <></>;
+          })}
         </Grid>
       </Container>
     </Page>

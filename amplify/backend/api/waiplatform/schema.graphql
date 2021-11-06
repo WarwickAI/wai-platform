@@ -20,6 +20,7 @@ type Talk
   title: String!
   logo: String
   cover: String
+  display: Boolean
   createdAt: AWSDate
   description: String
   joinLink: String
@@ -36,6 +37,7 @@ type Course
   title: String!
   logo: String
   cover: String
+  display: Boolean
   createdAt: AWSDate
   description: String
   joinLink: String
@@ -71,6 +73,7 @@ type Project
   title: String
   logo: AWSURL
   cover: AWSURL
+  display: Boolean
   createdAt: AWSDate
   description: String
   joinLink: AWSURL

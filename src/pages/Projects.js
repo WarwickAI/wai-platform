@@ -74,14 +74,19 @@ function Projects({ scrollPosition }) {
 
         <Grid container spacing={3}>
           {!isLoading &&
-            projects.map((project, index) => (
-              <ProjectPostCard
-                key={project.id}
-                project={project}
-                index={index}
-                scrollPosition={scrollPosition}
-              />
-            ))}
+            projects.map((project, index) => {
+              if (project.display) {
+                return (
+                  <ProjectPostCard
+                    key={project.id}
+                    project={project}
+                    index={index}
+                    scrollPosition={scrollPosition}
+                  />
+                );
+              }
+              return <></>;
+            })}
         </Grid>
       </Container>
     </Page>
