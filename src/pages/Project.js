@@ -77,15 +77,17 @@ export default function Project() {
             {/* <Typography sx={{ color: 'text.secondary' }}>{project.description}</Typography> */}
             <ReactMarkdown children={project.description} />
 
-            <Button
-              variant="contained"
-              href={project.joinLink}
-              target="_blank"
-              sx={{ my: { xs: 5, sm: 5 } }}
-              startIcon={<Icon icon={plusFill} />}
-            >
-              Join Project
-            </Button>
+            {project.joinLink && (
+              <Button
+                variant="contained"
+                href={project.joinLink}
+                target="_blank"
+                sx={{ my: { xs: 5, sm: 5 } }}
+                startIcon={<Icon icon={plusFill} />}
+              >
+                Join Project
+              </Button>
+            )}
           </Box>
         </MotionContainer>
       </Container>
