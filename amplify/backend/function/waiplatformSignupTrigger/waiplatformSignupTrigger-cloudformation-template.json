@@ -122,12 +122,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "waiplatformLambdaRole0fe69151",
+            "waiplatformLambdaRole4ec02ce4",
             {
               "Fn::Join": [
                 "",
                 [
-                  "waiplatformLambdaRole0fe69151",
+                  "waiplatformLambdaRole4ec02ce4",
                   "-",
                   {
                     "Ref": "env"
